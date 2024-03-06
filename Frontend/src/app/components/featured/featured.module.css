@@ -1,0 +1,88 @@
+.container {
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 96px;
+  font-weight: 300;
+  font-family: var(--font-bartina-regular);
+  margin-bottom: 20px;
+}
+
+.logo {
+  color: var(--textColor);
+  background: linear-gradient(
+    0deg,
+    var(--textColor) 0%,
+    var(--secondaryLogoColor) 100%
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.sliderSkeleton {
+  display: flex;
+  height: 450px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-color: #f0f0f000;
+  }
+  50% {
+    background-color: var(--softBg);
+  }
+  100% {
+    background-color: #f0f0f000;
+  }
+}
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--softTextColor);
+}
+
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 72px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 64px;
+  }
+  .post {
+    flex-direction: column;
+    gap: 20px;
+    display: grid;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 56px;
+  }
+
+  .imgContainer {
+    height: 300px;
+  }
+  .postTitle {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 48px;
+  }
+}

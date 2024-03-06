@@ -1,0 +1,143 @@
+### Register User:
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+
+{
+    "username": "ILoveTrains",
+    "password": "CrazyPassword@123",
+    "email": "someone@somewhere.com"
+}
+
+### Login User:
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "ILoveTrains",
+  "password": "CrazyPassword@123"
+}
+
+### Login as admin:
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "Admin",
+  "password": "Admin123@"
+}
+
+### Login as user:
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "User",
+  "password": "User123@"
+}
+
+### Add a post:
+POST http://localhost:8080/api/v1/posts
+Content-Type: application/json
+Authorization: bearer {{adminJWT}}
+
+{
+    "title": "Post 1",
+    "description": "Post 1 description",
+    "content": "Post 1 content"
+}
+
+### Add a post:
+POST http://localhost:8080/api/v1/posts
+Content-Type: application/json
+Authorization: bearer {{adminJWT}}
+
+{
+  "title": "Post 2",
+  "description": "Post 2 description",
+  "content": "Post 2 content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl quis lacinia lacinia, nunc nisl lacinia nunc, quis lacinia nisl nisl"
+}
+
+### Add a post:
+POST http://localhost:8080/api/v1/posts
+Content-Type: application/json
+Authorization: bearer {{userIloveTrainsJWT}}
+
+{
+  "title": "Post 3",
+  "description": "Post 3 description",
+  "content": "Post 3 content: Lorem ipsum dolor sit amet, nunc nisl lacinia nunc, quis lacinia nisl nisl"
+}
+
+### Add a bad post:
+POST http://localhost:8080/api/v1/posts
+Content-Type: application/json
+Authorization: bearer {{adminJWT}}
+
+{
+  "title": "1",
+  "description": "Post 1 description",
+  "content": "Post 1 content"
+}
+
+### Add a comment:
+POST http://localhost:8080/api/v1/posts/1/comments
+Content-Type: application/json
+Authorization: bearer {{userIloveTrainsJWT}}
+
+{
+  "comment": "Comment First: Great post!"
+
+}
+
+### Update a post:
+PUT http://localhost:8080/api/v1/posts/1
+Content-Type: application/json
+Authorization: bearer {{adminJWT}}
+
+{
+    "title": "Post 1 updated by admin",
+    "description": "Post 1 description updated",
+    "content": "Post 1 content updated"
+}
+
+### Update a comment:
+PUT http://localhost:8080/api/v1/comments/1
+Content-Type: application/json
+Authorization: bearer {{userIloveTrainsJWT}}
+
+{
+  "comment": "Comment 1 updated: Great post Dude!"
+}
+
+### Get all posts:
+GET http://localhost:8080/api/v1/posts
+Authorization: bearer {{adminJWT}}
+
+### Get all posts with pagination:
+GET http://localhost:8080/api/v1/posts?pageNo=1&pageSize=1
+Authorization: bearer {{adminJWT}}
+
+### Get a post by id:
+GET http://localhost:8080/api/v1/posts/1
+Authorization: bearer {{adminJWT}}
+
+### Get a post by id:
+GET http://localhost:8080/api/v1/posts/200
+Authorization: bearer {{adminJWT}}
+
+### Get all comments for a post:
+GET http://localhost:8080/api/v1/posts/1/comments
+Authorization: bearer {{adminJWT}}
+
+
+### Delete a post by id:
+DELETE http://localhost:8080/api/v1/posts/1
+Authorization: bearer {{adminJWT}}
+
+### Delete a comment by id:
+DELETE http://localhost:8080/api/v1/comments/1
+Authorization: bearer {{adminJWT}}
+
+
+
+

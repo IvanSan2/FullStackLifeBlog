@@ -1,0 +1,29 @@
+.container {
+  flex: 2;
+  margin-top: 50px;
+  margin-left: 20px;
+}
+
+.subtitle {
+  color: gray;
+  font-size: 18px;
+  font-weight: 400;
+}
+.title {
+  margin-bottom: 50px;
+}
+
+.items {
+  margin-top: 35px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+/* .titleContainer {
+  margin-left: auto;
+  margin-right: 0;
+  width: fit-content;
+} */

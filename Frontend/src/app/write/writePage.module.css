@@ -1,0 +1,94 @@
+.container {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleInput {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  font-family: var(--font-bartina-bold);
+  background-color: var(--bg);
+  color: var(--textColor);
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+
+.titleInput::placeholder {
+  color: var(--softTextColor);
+}
+
+.descriptionInput {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-style: italic;
+  background-color: var(--bg);
+  color: var(--textColor);
+  border: none;
+  outline: none;
+  overflow: hidden;
+  cursor: text;
+}
+
+.descriptionInput[contenteditable]:empty::before {
+  content: attr(placeholder);
+  color: var(--softTextColor);
+}
+.imageContainer {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 450px;
+  background-color: var(--bg);
+  border: none;
+  outline: none;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+
+.imageContainer::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  content: "Upload Image";
+  color: var(--softTextColor);
+  opacity: 0.5;
+  font-size: 2rem;
+  font-family: var(--font-bartina-bold);
+  transition: 0.2s ease-in-out;
+}
+.imageContainer:hover::before {
+  opacity: 1;
+}
+.imageContainer:hover {
+  background-color: var(--softBg);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+  outline: none;
+  overflow: hidden;
+}
+.imageUploadBtn {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.editor {
+  margin-top: 10px;
+}
+.contentTitle {
+  margin-top: 20px;
+  color: var(--softTextColor);
+}

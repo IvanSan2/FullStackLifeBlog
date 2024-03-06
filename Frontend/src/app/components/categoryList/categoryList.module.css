@@ -1,0 +1,72 @@
+.title {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.category {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  background-color: var(--softBg);
+  border-radius: 10px;
+  height: 64px;
+  padding: 20px;
+  justify-content: center;
+  width: 15%;
+  transition: "all 0.4s ease-out";
+}
+
+.image {
+  object-fit: cover;
+}
+
+.web {
+  background-color: var(--categoryWeb);
+}
+
+.mobile {
+  background-color: var(--categoryMobile);
+}
+
+.java {
+  background-color: var(--categoryJava);
+}
+
+.design {
+  background-color: var(--categoryDesign);
+}
+
+.lifestyle {
+  background-color: var(--categoryLifestyle);
+}
+
+@media screen and (max-width: 1280px) {
+  .category {
+    width: 18%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .category {
+    width: 25%;
+  }
+  .title {
+    font-size: 2.2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .category {
+    width: 45%;
+  }
+  .title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,59 @@
+.link {
+  cursor: pointer;
+}
+
+.burger {
+  width: 24px;
+  height: 20px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.responsiveMenu {
+  /* position: absolute; */
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  font-size: large;
+  top: 100px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 100px);
+  border-radius: 10px;
+  /* background-color: var(--softBg); */
+  background-color: var(--responsiveMenuColor);
+  backdrop-filter: blur(15px);
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: var(--textColor);
+  border-radius: 5px;
+}
+
+.plusIcon {
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 640px) {
+  .responsiveMenu {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .burger {
+    display: flex;
+  }
+  .link {
+    display: none;
+  }
+}

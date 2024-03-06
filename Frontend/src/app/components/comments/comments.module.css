@@ -1,0 +1,87 @@
+.container {
+  margin-top: 50px;
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--softBg);
+  color: var(--textColor);
+  border-radius: 20px;
+  margin-bottom: 50px;
+}
+.form textarea {
+  font-family: inherit;
+  font-size: inherit;
+  margin: 1rem;
+  min-height: 100px;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: var(--softBg);
+  color: var(--textColor);
+  resize: none;
+  appearance: none;
+  overflow: hidden;
+  border: none;
+  outline: none;
+}
+
+.formBar {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--softBg);
+  color: var(--textColor);
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.utilsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: var(--softBg);
+  color: var(--textColor);
+}
+
+.button {
+  justify-self: flex-end;
+  border: none;
+  background-color: #ffffff00;
+  cursor: pointer;
+}
+
+.login {
+  margin-left: 1rem;
+  padding: 2.5rem 1rem;
+  border: var(--softBg) 2px dashed;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+.loginText {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  font-style: italic;
+  cursor: default;
+}
+.loginButton {
+  font-size: medium;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--softBg);
+  color: #fff;
+  cursor: pointer;
+}
+
+.comments {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
