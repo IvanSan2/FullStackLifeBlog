@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment="" />
+    <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/AuthenticationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/AuthenticationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/BlogExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/BlogExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/PaginationException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/PaginationException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/ResourceNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/ResourceNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/UserAlreadyExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/UserAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/http-client.private.env.json" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/http-client.private.env.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,31 +28,83 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HttpClientSelectedEnvironments">
+    <file url="file://$PROJECT_DIR$/Backend/src/main/resources/blog.http" environment="dev" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2dJiqDfrcdMDqpJChXMl9kFRfKw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ciklo/OneDrive/GitHub/MyProjects/FullStackLifeBlog",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.blog | Add a bad post:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Add a comment:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Add a post:#1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Add a post:#2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Add a post:#3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Get all posts:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Login User:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Login as admin:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Register User:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Update a comment:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Update a post:.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BlogFinalProjectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ciklo/OneDrive/GitHub/MyProjects/FullStackLifeBlog/Backend/src/main/java/com/ivansan/blogfinalproject/error&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ciklo\OneDrive\GitHub\MyProjects\FullStackLifeBlog\Backend\src\main\java\com\ivansan\blogfinalproject\error" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.BlogFinalProjectApplication">
+    <configuration name="blog | Add a bad post:" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/Backend/src/main/resources/blog.http" index="8" requestIdentifier="Add a bad post:" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="blog | Add a comment:" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/Backend/src/main/resources/blog.http" index="9" requestIdentifier="Add a comment:" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="blog | Get all posts:" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/Backend/src/main/resources/blog.http" index="12" requestIdentifier="Get all posts:" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="blog | Update a comment:" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/Backend/src/main/resources/blog.http" index="11" requestIdentifier="Update a comment:" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="blog | Update a post:" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/Backend/src/main/resources/blog.http" index="10" requestIdentifier="Update a post:" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="BlogFinalProjectApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="BlogFinalProject" />
@@ -46,6 +113,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.blog | Get all posts:" />
+        <item itemvalue="HTTP Request.blog | Update a comment:" />
+        <item itemvalue="HTTP Request.blog | Update a post:" />
+        <item itemvalue="HTTP Request.blog | Add a comment:" />
+        <item itemvalue="HTTP Request.blog | Add a bad post:" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -65,10 +141,27 @@
       <option name="presentableId" value="Default" />
       <updated>1709732775560</updated>
       <workItem from="1709732776647" duration="157000" />
+      <workItem from="1710094159211" duration="2694000" />
+      <workItem from="1710835525249" duration="4624000" />
+      <workItem from="1710841347269" duration="388000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

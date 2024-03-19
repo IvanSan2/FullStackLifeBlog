@@ -1,8 +1,10 @@
 package com.ivansan.blogfinalproject.error;
 
+
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -14,12 +16,11 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
-// @ControllerAdvice is used to tell spring that this class is advice for the controller
-// - this class is used to handle the exception that is thrown by the controller
 @ControllerAdvice
 public class BlogExceptionHandler {
     //prefer DTOS!
 
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(BlogException.class)
     public ResponseEntity<Map<String, Object>>
     handle(
@@ -78,15 +79,28 @@ public class BlogExceptionHandler {
         var map = new HashMap<>(getExcMap(exc, method, request));
 
         exc.getBindingResult().getFieldErrors().forEach(
-                e -> map.put(STR."Field_\{e.getField()}", e.getDefaultMessage())
+                e -> map.put("Field_" + e.getField(), e.getDefaultMessage())
         );
         //log to log server()
         return ResponseEntity.badRequest().body(map);
     }
 
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(UsernameNotFoundException.class)
+    public ResponseEntity<Map<String, Object>>
+    handle(
+            UsernameNotFoundException e,
+            HandlerMethod method,
+            HttpServletRequest request
+
+    ) {
+        var map = new HashMap<>(getExcMap(e, method, request));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(map);
+    }
 
     //@Order(10)
     //CATCH ALL:
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>>
     handle(
@@ -121,7 +135,4 @@ public class BlogExceptionHandler {
                 "status", HttpStatus.BAD_REQUEST.value()
         );
     }
-
-
 }
-

@@ -146,7 +146,7 @@ public class CommentServiceImpl implements CommentService {
     public Comment getCommentByIdOrThrow(long commentId) {
         return commentRepository.findById(commentId)
                 .orElseThrow(
-                ResourceNotFoundException.supply("Comment", "id", String.valueOf(commentId)
+                ResourceNotFoundException.newInstance("Comment", "id", String.valueOf(commentId)
                 )
         );
     }

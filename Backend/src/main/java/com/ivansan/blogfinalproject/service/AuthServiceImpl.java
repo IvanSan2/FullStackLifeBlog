@@ -5,7 +5,7 @@ import com.ivansan.blogfinalproject.dto.LoginResponseDTO;
 import com.ivansan.blogfinalproject.dto.UserRequestDTO;
 import com.ivansan.blogfinalproject.dto.UserResponseDTO;
 import com.ivansan.blogfinalproject.error.AuthenticationException;
-import com.ivansan.blogfinalproject.error.UserAlreadyExistException;
+import com.ivansan.blogfinalproject.error.UserAlreadyExistsException;
 import com.ivansan.blogfinalproject.repository.RoleRepository;
 import com.ivansan.blogfinalproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -107,9 +107,9 @@ public class AuthServiceImpl implements AuthService {
                 .ifPresent(
                         u -> {
                             if (u.getUsername().equalsIgnoreCase(userRequestDTO.getUsername())) {
-                                throw new UserAlreadyExistException(STR."Username \{userRequestDTO.getUsername()} already exists.");
+                                throw new UserAlreadyExistsException(STR."Username \{userRequestDTO.getUsername()} already exists.");
                             } else {
-                                throw new UserAlreadyExistException(STR."Email \{userRequestDTO.getEmail()} already exists.");
+                                throw new UserAlreadyExistsException(STR."Email \{userRequestDTO.getEmail()} already exists.");
                             }
                         }
                 );

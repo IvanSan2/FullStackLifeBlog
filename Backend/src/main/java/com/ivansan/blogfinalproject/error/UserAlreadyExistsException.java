@@ -1,15 +1,15 @@
 package com.ivansan.blogfinalproject.error;
 
-public class UserAlreadyExistException extends BlogException {
-    public UserAlreadyExistException(String message) {
+public class UserAlreadyExistsException extends BlogException {
+    public UserAlreadyExistsException(String message) {
         super(message);
     }
 
-    public UserAlreadyExistException() {
+    public UserAlreadyExistsException() {
         super("User already exists or email already exists.");
     }
 
-    public UserAlreadyExistException(String username, String email) {
+    public UserAlreadyExistsException(String username, String email) {
         super(STR."User with username \{username} or email \{email} already exists.");
     }
 }

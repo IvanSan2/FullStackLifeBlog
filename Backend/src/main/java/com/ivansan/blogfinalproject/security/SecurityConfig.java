@@ -9,6 +9,7 @@ import com.nimbusds.jose.proc.SecurityContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,6 +22,12 @@ import org.springframework.security.oauth2.jwt.NimbusJwtEncoder;
 import org.springframework.security.oauth2.server.resource.authentication.JwtAuthenticationConverter;
 import org.springframework.security.oauth2.server.resource.authentication.JwtGrantedAuthoritiesConverter;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+import java.util.List;
 
 // this annotation is used to tell spring that this class is a configuration class
 @Configuration
@@ -37,11 +44,27 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 
     private final RSAKeyProperties keyProperties;
+
+    @Bean
+    // corsConfigurationSource is used to configure the cors configuration source
+    public CorsConfigurationSource corsConfigurationSource() {
+        CorsConfiguration configuration = new CorsConfiguration();
+        configuration.setAllowedOrigins(List.of("http://127.0.0.1:3000", "http://localhost:3000"));
+        configuration.setAllowCredentials(true);
+        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin", "Cache-Control", "Content-Type", "Authorization"));
+        configuration.setAllowedMethods(Arrays.asList("DELETE", "GET", "POST", "PATCH", "PUT"));
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+        return source;
+    }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         // return the security filter chain
         // the security filter chain is used to configure the security of the http request
         return http
+                // cors is used to configure the cors
+                // Customizer.withDefaults() is used to configure the cors with the default configuration
+                .cors(Customizer.withDefaults())
                 // disable csrf
                 // -csrf is a security feature that is used to prevent the attack that is called Cross-Site Request Forgery
                 .csrf(AbstractHttpConfigurer::disable)
@@ -68,8 +91,7 @@ public class SecurityConfig {
                 )
                 // oauth2ResourceServer is used to configure the oauth2 resource server
                 // jwt is used to configure the jwt
-                .oauth2ResourceServer(oauth -> {
-                    oauth.jwt(jwtConfigurer -> {
+                .oauth2ResourceServer(oauth -> oauth.jwt(jwtConfigurer -> {
                         // jwtAuthenticationConverter is used to configure the jwt authentication converter
                         var converter = new JwtAuthenticationConverter();
                         // grantedAuthoritiesConverter is used to configure the granted authorities converter
@@ -80,8 +102,7 @@ public class SecurityConfig {
                         converter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
                         // jwtAuthenticationConverter is used to configure the jwt authentication converter
                         jwtConfigurer.jwtAuthenticationConverter(converter);
-                    });
-                })
+                    }))
                 // httpBasic is used to configure the http basic authentication
                 // .httpBasic(Customizer.withDefaults())
                 // formLogin is used to configure the form login
@@ -114,6 +135,6 @@ public class SecurityConfig {
         return new NimbusJwtEncoder(jwkSource);
     }
 
-
+ 
 
 }
