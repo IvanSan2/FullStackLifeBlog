@@ -20,7 +20,7 @@ import java.util.Map;
 public class BlogExceptionHandler {
     //prefer DTOS!
 
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.BAD_REQUEST) //400
     @ExceptionHandler(BlogException.class)
     public ResponseEntity<Map<String, Object>>
     handle(
@@ -99,7 +99,7 @@ public class BlogExceptionHandler {
     }
 
     //@Order(10)
-    //CATCH ALL:
+    //CATCH ALL: 500
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>>

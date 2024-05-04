@@ -1,15 +1,12 @@
 package com.ivansan.blogfinalproject.error;
 
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.BAD_REQUEST)
 public class UserAlreadyExistsException extends BlogException {
-    public UserAlreadyExistsException(String message) {
-        super(message);
-    }
-
-    public UserAlreadyExistsException() {
-        super("User already exists or email already exists.");
-    }
-
     public UserAlreadyExistsException(String username, String email) {
-        super(STR."User with username \{username} or email \{email} already exists.");
+        super("User with email: " + email + " username " + username + " already exists");
     }
 }

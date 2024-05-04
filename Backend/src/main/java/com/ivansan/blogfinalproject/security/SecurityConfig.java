@@ -6,6 +6,7 @@ import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
 import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +15,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
@@ -29,27 +29,30 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.List;
 
-// this annotation is used to tell spring that this class is a configuration class
+import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
+
+/**
+ * This class is responsible for the security configuration of the application.
+ * It uses Spring Security and OAuth2 for authentication and authorization.
+ */
 @Configuration
-// this annotation is used to enable the WebSecurity
-// web security is a feature that is used to secure the web application
-// this feature is used to secure the web application by using the authentication and authorization
 @EnableWebSecurity
-// this annotation is used to enable the method security
-// this means that we can use the security feature in the method level such as @PreAuthorize, @PostAuthorize, etc.
-// also we can use the security feature in the class level such as @Secured, @RolesAllowed, etc
 @EnableMethodSecurity
-// requiredArgsConstructor is used to create a constructor that will be used to inject the final field
 @RequiredArgsConstructor
 public class SecurityConfig {
 
+    // RSAKeyProperties is a class that holds the public and private keys for JWT encoding and decoding.
     private final RSAKeyProperties keyProperties;
 
+    /**
+     * This method configures Cross-Origin Resource Sharing (CORS) for the application.
+     * It allows requests from specific origins and allows specific HTTP methods.
+     * @return CorsConfigurationSource object that holds the CORS configuration.
+     */
     @Bean
-    // corsConfigurationSource is used to configure the cors configuration source
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://127.0.0.1:3000", "http://localhost:3000"));
+        configuration.setAllowedOrigins(List.of("http://127.0.0.1:8080", "http://localhost:8080"));
         configuration.setAllowCredentials(true);
         configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin", "Cache-Control", "Content-Type", "Authorization"));
         configuration.setAllowedMethods(Arrays.asList("DELETE", "GET", "POST", "PATCH", "PUT"));
@@ -57,66 +60,61 @@ public class SecurityConfig {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+
+    /**
+     * This method configures the security filter chain for the application.
+     * It sets up the authorization rules for different API endpoints.
+     * @param http HttpSecurity object to configure.
+     * @return SecurityFilterChain object that holds the security configuration.
+     * @throws Exception if an error occurs during configuration.
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // return the security filter chain
-        // the security filter chain is used to configure the security of the http request
         return http
-                // cors is used to configure the cors
-                // Customizer.withDefaults() is used to configure the cors with the default configuration
                 .cors(Customizer.withDefaults())
-                // disable csrf
-                // -csrf is a security feature that is used to prevent the attack that is called Cross-Site Request Forgery
                 .csrf(AbstractHttpConfigurer::disable)
-                // authorizeHttpRequests is used to configure the authorization of the http request
-                // anyRequest is used to authorize any request
-                // authenticated is used to authorize the request that is authenticated
                 .authorizeHttpRequests(
-                        // auth is used to configure the authorization of the http request
                         auth -> {
-                            // allow access to /api/v1/auth/** for everyone
+                            //allow AuthController login/register
                             auth.requestMatchers("/api/v1/auth/**").permitAll();
-                            // allow access to /api/v1/** for authenticated user
+
+                            //secure the rest of the API
                             auth.requestMatchers("/api/v1/**").authenticated();
-                            // permit any request that doesn't start with /api/v1/auth
-                            auth.anyRequest().authenticated(); // docs and swagger
 
-                            }
+                            //  permit any request that does not start with /api/v1
+                            auth.anyRequest().permitAll(); //docs  //swagger
+                        }
                 )
-                // sessionManagement is used to configure the session management
-                // sessionCreationPolicy is used to configure the session creation policy
-                // STATELESS is used to configure the session creation policy to be stateless
-                .sessionManagement(
-                        session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                )
-                // oauth2ResourceServer is used to configure the oauth2 resource server
-                // jwt is used to configure the jwt
-                .oauth2ResourceServer(oauth -> oauth.jwt(jwtConfigurer -> {
-                        // jwtAuthenticationConverter is used to configure the jwt authentication converter
-                        var converter = new JwtAuthenticationConverter();
-                        // grantedAuthoritiesConverter is used to configure the granted authorities converter
-                        var grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
-                        // authorityPrefix is used to configure the authority prefix (by default it is "SCOPE_") (we don't use prefix)
-                        grantedAuthoritiesConverter.setAuthorityPrefix("");
-                        // setJwtGrantedAuthoritiesConverter is used to set the granted authorities converter
-                        converter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
-                        // jwtAuthenticationConverter is used to configure the jwt authentication converter
-                        jwtConfigurer.jwtAuthenticationConverter(converter);
-                    }))
-                // httpBasic is used to configure the http basic authentication
-                // .httpBasic(Customizer.withDefaults())
-                // formLogin is used to configure the form login
-                //.formLogin(Customizer.withDefaults()) // we don't use form login
+                .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
+                .oauth2ResourceServer(auth -> auth.jwt(jwtConfigurer -> {
+                    var jwtAuthenticationConverter = new JwtAuthenticationConverter();
+
+                    var grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
+
+                    grantedAuthoritiesConverter.setAuthorityPrefix("");
+
+                    jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
+                    jwtConfigurer.jwtAuthenticationConverter(jwtAuthenticationConverter);
+                }))
+                //.httpBasic(withDefaults())
                 .build();
-
-
     }
 
+    /**
+     * This method creates a JwtDecoder bean for decoding JWTs.
+     * It uses the public key from RSAKeyProperties.
+     * @return JwtDecoder object for decoding JWTs.
+     */
     @Bean
     JwtDecoder jwtDecoder() {
         return NimbusJwtDecoder.withPublicKey(keyProperties.publicKey()).build();
     }
 
+    /**
+     * This method creates a JwtEncoder bean for encoding JWTs.
+     * It uses the public and private keys from RSAKeyProperties.
+     * @return JwtEncoder object for encoding JWTs.
+     */
     @Bean
     JwtEncoder jwtEncoder() {
         RSAKey rsaKey = new RSAKey.Builder(keyProperties.publicKey())
@@ -134,7 +132,4 @@ public class SecurityConfig {
         //finally we can create the encoder:
         return new NimbusJwtEncoder(jwkSource);
     }
-
- 
-
 }

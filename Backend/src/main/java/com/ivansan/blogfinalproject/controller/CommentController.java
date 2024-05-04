@@ -4,6 +4,10 @@ import com.ivansan.blogfinalproject.dto.CommentRequestDTO;
 import com.ivansan.blogfinalproject.dto.CommentResponseDTO;
 import com.ivansan.blogfinalproject.dto.CommentsListDTO;
 import com.ivansan.blogfinalproject.service.CommentService;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +20,11 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1")
+@Tag(
+        name = "Comment Controller",
+        description = "Blog Comments"
+)
+@SecurityRequirement(name = "Bearer Authentication")
 public class CommentController {
 
     private final CommentService commentService;

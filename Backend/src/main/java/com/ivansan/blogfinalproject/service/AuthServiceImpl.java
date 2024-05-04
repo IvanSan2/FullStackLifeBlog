@@ -107,9 +107,9 @@ public class AuthServiceImpl implements AuthService {
                 .ifPresent(
                         u -> {
                             if (u.getUsername().equalsIgnoreCase(userRequestDTO.getUsername())) {
-                                throw new UserAlreadyExistsException(STR."Username \{userRequestDTO.getUsername()} already exists.");
+                                throw new UserAlreadyExistsException(userRequestDTO.getUsername(), userRequestDTO.getEmail());
                             } else {
-                                throw new UserAlreadyExistsException(STR."Email \{userRequestDTO.getEmail()} already exists.");
+                                throw new UserAlreadyExistsException(userRequestDTO.getUsername(), userRequestDTO.getEmail());
                             }
                         }
                 );

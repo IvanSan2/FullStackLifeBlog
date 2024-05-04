@@ -4,6 +4,16 @@ import com.ivansan.blogfinalproject.dto.PostCreateDTO;
 import com.ivansan.blogfinalproject.dto.PostResponseDTO;
 import com.ivansan.blogfinalproject.dto.PostsListDTO;
 import com.ivansan.blogfinalproject.service.PostService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.SecurityRequirements;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +31,22 @@ import org.springframework.web.util.UriComponentsBuilder;
 // @RequiredArgsConstructor annotation is used to tell spring to create a constructor with all final fields as parameters
 // - this annotation is used to inject dependencies
 @RequiredArgsConstructor
+@Tag(
+        name = "Post Controller",
+        description = "Blog Posts"//swagger annotation
+) //swagger annotation
+
+@SecurityRequirement(name = "Bearer Authentication")
+
 public class PostController {
     private final PostService postService;
 
+    @Operation(summary = "Get all posts") //swagger annotation
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully get all posts", content = @Content (mediaType = "application/json", schema = @Schema(implementation = PostsListDTO.class))),
+            @ApiResponse(responseCode = "400", description = "Bad request"),
+            @ApiResponse(responseCode = "404", description = "Posts not found"),
+    }) //swagger annotation
     @GetMapping
     //GET /api/v1/posts?pageNo=0&pageSize=10&sortOrder=ASC&sortBy=id
     // - pageNo is used to tell spring the current page number
