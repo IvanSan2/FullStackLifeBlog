@@ -5,21 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/OpenApi3Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/enums/AuthProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/api/auth/[...nextauth]/route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/providers/AuthProvider.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/utils/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Frontend/src/app/utils/backendConnection.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/BlogFinalProjectApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/BlogFinalProjectApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/BlogExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/BlogExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/UserAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/UserAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/SQLRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/SQLRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/UserRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/UserResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/UserResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/entity/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/authLinks/AuthLinks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/authLinks/AuthLinks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/login/loginPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/login/loginPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/login/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/login/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +64,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -68,46 +78,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.blog | Add a bad post:.executor": "Run",
-    "HTTP Request.blog | Add a comment:.executor": "Run",
-    "HTTP Request.blog | Add a post:#1.executor": "Run",
-    "HTTP Request.blog | Add a post:#2.executor": "Run",
-    "HTTP Request.blog | Add a post:#3.executor": "Run",
-    "HTTP Request.blog | Get all posts:.executor": "Run",
-    "HTTP Request.blog | Login User:.executor": "Run",
-    "HTTP Request.blog | Login as admin:.executor": "Run",
-    "HTTP Request.blog | Register User:.executor": "Run",
-    "HTTP Request.blog | Update a comment:.executor": "Run",
-    "HTTP Request.blog | Update a post:.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.BlogFinalProjectApplication.executor": "Run",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ciklo/OneDrive/GitHub/MyProjects/FullStackLifeBlog/Backend/src/main/java/com/ivansan/blogfinalproject/error",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rest.client.default.execution.environment": "dev",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.blog | Add a bad post:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Add a comment:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Add a post:#1.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Add a post:#2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Add a post:#3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Get all posts:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Login User:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Login as admin:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Register User:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Update a comment:.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.blog | Update a post:.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.BlogFinalProjectApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ciklo/OneDrive/GitHub/MyProjects/FullStackLifeBlog/Backend/src/main/java/com/ivansan/blogfinalproject/error&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ciklo\OneDrive\GitHub\MyProjects\FullStackLifeBlog\Backend\src\main\java\com\ivansan\blogfinalproject\error" />
@@ -174,6 +187,11 @@
       <workItem from="1711478910432" duration="37000" />
       <workItem from="1714823600837" duration="3190000" />
       <workItem from="1714836073533" duration="7043000" />
+      <workItem from="1715023733368" duration="4668000" />
+      <workItem from="1715181632715" duration="1310000" />
+      <workItem from="1715237897138" duration="10034000" />
+      <workItem from="1715258973324" duration="671000" />
+      <workItem from="1715439447237" duration="3240000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />

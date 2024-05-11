@@ -26,4 +26,5 @@ public class UserRequestDTO{
                 message = "Invalid email format."
         )
         String email;
+        String image;
   }

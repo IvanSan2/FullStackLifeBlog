@@ -35,3 +35,6 @@ build/
 ### ssl keystore ###
 /r
 /src/main/resources/certs/
+
+### application properties ###
+/src/main/resources/application.properties

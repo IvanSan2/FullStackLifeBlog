@@ -6,12 +6,16 @@ import { useState, useContext } from "react";
 import Image from "next/image";
 import plusIcon from "../../../../public/plus_icon.svg";
 import { ThemeContext } from "@/app/context/ThemeContext";
+import { signOut } from "next-auth/react";
+import { useSession } from "next-auth/react";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
+  const { data, status } = useSession();
 
-  const status = "authenticated";
+  console.log(data);
+
   return (
     <>
       {status === "notauthenticated" ? (
@@ -34,7 +38,7 @@ const AuthLinks = () => {
               className={styles.plusIcon}
             />
           </Link>
-          <Link href="/logout" className={styles.link}>
+          <Link href="/" className={styles.link} onClick={signOut}>
             Logout
           </Link>
         </>

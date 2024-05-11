@@ -1,5 +1,6 @@
 package com.ivansan.blogfinalproject.entity;
 
+import com.ivansan.blogfinalproject.enums.AuthProvider;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -27,6 +28,14 @@ public class User {
     @NonNull
     private String password;
 
+    private String image;
+
+    // @Enumerated is used to specify the type of the enum
+    @Enumerated(EnumType.STRING)
+    private AuthProvider provider;
+
+    private String providerId;
+
     // FetchType.EAGER is used to load the roles of the user when the user is loaded
     // FetchType.LAZY is used to load the roles of the user when the roles are accessed
     @ManyToMany(fetch = FetchType.EAGER)
@@ -49,5 +58,6 @@ public class User {
     private Set<Comment> comments;
 
 
-
 }
+
+

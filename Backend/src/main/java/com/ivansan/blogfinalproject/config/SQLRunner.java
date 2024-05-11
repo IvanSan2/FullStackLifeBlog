@@ -2,6 +2,7 @@ package com.ivansan.blogfinalproject.config;
 
 import com.ivansan.blogfinalproject.entity.Role;
 import com.ivansan.blogfinalproject.entity.User;
+import com.ivansan.blogfinalproject.enums.AuthProvider;
 import com.ivansan.blogfinalproject.repository.RoleRepository;
 import com.ivansan.blogfinalproject.repository.UserRepository;
 import jakarta.transaction.Transactional;
@@ -38,6 +39,9 @@ public class SQLRunner implements CommandLineRunner {
                             "admin@domain.com",
                             "Admin",
                             passwordEncoder.encode("Admin123@"),
+                            null,
+                            AuthProvider.LOCAL,
+                            null,
                             Set.of(adminRole,userRole),
                             Set.of()
                     )
@@ -49,6 +53,9 @@ public class SQLRunner implements CommandLineRunner {
                             "user@Domain.com",
                             "User",
                             passwordEncoder.encode("User123@"),
+                            null,
+                            AuthProvider.LOCAL,
+                            null,
                             Set.of(userRole),
                             Set.of()
                     )
