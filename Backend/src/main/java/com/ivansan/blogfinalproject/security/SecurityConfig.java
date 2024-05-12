@@ -1,12 +1,6 @@
 package com.ivansan.blogfinalproject.security;
 
 import com.ivansan.blogfinalproject.config.RSAKeyProperties;
-import com.ivansan.blogfinalproject.dto.LoginRequestDTO;
-import com.ivansan.blogfinalproject.dto.LoginResponseDTO;
-import com.ivansan.blogfinalproject.dto.UserRequestDTO;
-import com.ivansan.blogfinalproject.dto.UserResponseDTO;
-import com.ivansan.blogfinalproject.error.UserAlreadyExistsException;
-import com.ivansan.blogfinalproject.service.AuthService;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
 import com.nimbusds.jose.jwk.source.ImmutableJWKSet;
@@ -14,7 +8,6 @@ import com.nimbusds.jose.jwk.source.JWKSource;
 import com.nimbusds.jose.proc.SecurityContext;
 
 import lombok.RequiredArgsConstructor;
-import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -22,7 +15,6 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.annotation.web.configurers.oauth2.client.OAuth2LoginConfigurer;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
@@ -40,7 +32,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
+
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
@@ -110,8 +102,20 @@ public class SecurityConfig {
                     jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
                     jwtConfigurer.jwtAuthenticationConverter(jwtAuthenticationConverter);
                 }))
-
+                //oauth2 login configuration
+                .oauth2Login(oauth2 -> oauth2
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/oauth2/success")
+                        .userInfoEndpoint(userInfo -> userInfo
+                                .userService(oauth2UserService())
+                        )
+                )
                 .build();
+    }
+
+    @Bean
+    public OAuth2UserService<OAuth2UserRequest, OAuth2User> oauth2UserService() {
+        return new DefaultOAuth2UserService();
     }
 
     /**

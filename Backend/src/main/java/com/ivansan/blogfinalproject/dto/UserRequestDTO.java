@@ -27,4 +27,7 @@ public class UserRequestDTO{
         )
         String email;
         String image;
+        String provider;
+        String providerId;
+
   }

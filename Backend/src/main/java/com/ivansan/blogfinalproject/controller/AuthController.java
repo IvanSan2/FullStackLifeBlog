@@ -5,6 +5,7 @@ import com.ivansan.blogfinalproject.dto.LoginResponseDTO;
 import com.ivansan.blogfinalproject.dto.UserRequestDTO;
 import com.ivansan.blogfinalproject.dto.UserResponseDTO;
 import com.ivansan.blogfinalproject.service.AuthService;
+import com.ivansan.blogfinalproject.service.OAuth2ServiceImpl;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class AuthController {
     private final AuthService authService;
+    private final OAuth2ServiceImpl oAuth2Service;
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO dto) {
@@ -30,6 +32,11 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<UserResponseDTO> register(@RequestBody @Valid UserRequestDTO dto, UriComponentsBuilder uriBuilder) {
         return ResponseEntity.created(uriBuilder.path("/api/v1/auth/login").build().toUri()).body(authService.register(dto));
+    }
+
+    @GetMapping("/oauth2/success")
+    public ResponseEntity<LoginResponseDTO> oauth2Success(Authentication authentication) {
+        return ResponseEntity.ok(oAuth2Service.registerAndLogin(authentication));
     }
 
     @Hidden

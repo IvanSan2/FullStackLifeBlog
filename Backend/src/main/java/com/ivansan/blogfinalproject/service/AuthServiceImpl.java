@@ -34,6 +34,7 @@ public class AuthServiceImpl implements AuthService {
     private final ModelMapper modelMapper;
     private final RoleRepository roleRepository;
     private final JWTService jwtService;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var user = getUserEntityOrThrow(username);
@@ -104,10 +105,10 @@ public class AuthServiceImpl implements AuthService {
 
 
     private void checkIfUsernameOrEmailExists(UserRequestDTO userRequestDTO) {
-        userRepository.findByUsernameIgnoreCaseOrEmailIsIgnoreCase(userRequestDTO.getUsername(), userRequestDTO.getEmail())
+        userRepository.findByEmailIgnoreCase(userRequestDTO.getEmail())
                 .ifPresent(
                         u -> {
-                            if (u.getUsername().equalsIgnoreCase(userRequestDTO.getUsername())) {
+                            if (u.getUsername().equalsIgnoreCase(userRequestDTO.getEmail())) {
                                 throw new UserAlreadyExistsException(userRequestDTO.getUsername(), userRequestDTO.getEmail());
                             } else {
                                 throw new UserAlreadyExistsException(userRequestDTO.getUsername(), userRequestDTO.getEmail());
