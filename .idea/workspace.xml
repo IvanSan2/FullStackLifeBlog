@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/OAuthAttributes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/OAuth2Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/OAuth2ServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PasswordGeneratorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/LoginRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/LoginRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/LoginResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/UserRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment="." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,7 +171,7 @@
       <workItem from="1715258973324" duration="671000" />
       <workItem from="1715439447237" duration="16274000" />
       <workItem from="1715495045212" duration="198000" />
-      <workItem from="1715526477758" duration="6128000" />
+      <workItem from="1715526477758" duration="6795000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -202,7 +189,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715443450285</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=".">
+      <option name="closed" value="true" />
+      <created>1715533499784</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715533499784</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
