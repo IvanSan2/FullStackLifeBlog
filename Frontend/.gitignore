@@ -33,3 +33,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# properties
+.vscode
+*.properties
+
+# pem
+*.pem
