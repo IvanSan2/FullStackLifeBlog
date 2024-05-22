@@ -47,7 +47,7 @@ const Featured = () => {
     const fetchPosts = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8080/api/v1/posts?pageNo=0&pageSize=5&sortBy=createdAt&sortOrder=desc"
+          "/api/v1/posts?pageNo=0&pageSize=5&sortBy=createdAt&sortOrder=desc"
         );
         console.log(response);
         const data = await response.json();

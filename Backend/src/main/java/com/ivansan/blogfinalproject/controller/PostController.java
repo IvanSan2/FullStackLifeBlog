@@ -5,19 +5,20 @@ import com.ivansan.blogfinalproject.dto.PostResponseDTO;
 import com.ivansan.blogfinalproject.dto.PostsListDTO;
 import com.ivansan.blogfinalproject.service.PostService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import io.swagger.v3.oas.annotations.security.SecurityRequirements;
-import io.swagger.v3.oas.annotations.security.SecurityScheme;
+
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -67,10 +68,13 @@ public class PostController {
 
     @PostMapping
     public ResponseEntity<PostResponseDTO> createPost(@RequestBody @Valid PostCreateDTO dto,
-                                                           UriComponentsBuilder uriComponentsBuilder
+                                                           UriComponentsBuilder uriComponentsBuilder,
+                                                      Authentication authentication
     ){
+
+
         //1: convert dto to entity
-        var res = postService.createPost(dto);
+        var res = postService.createPost(dto,authentication);
         //2: build uri for the response
         // - uriComponentsBuilder is used to build uri (uriComponentsBuilder is injected by spring)
         var uri = uriComponentsBuilder.path("/api/v1/posts/{id}").buildAndExpand(res.getId()).toUri();

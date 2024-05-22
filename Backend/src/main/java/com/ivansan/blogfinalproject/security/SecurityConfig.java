@@ -1,5 +1,6 @@
 package com.ivansan.blogfinalproject.security;
 
+import com.ivansan.blogfinalproject.config.OAuth2LoginSuccessHandler;
 import com.ivansan.blogfinalproject.config.RSAKeyProperties;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
@@ -10,15 +11,12 @@ import com.nimbusds.jose.proc.SecurityContext;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserRequest;
-import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
-import org.springframework.security.oauth2.core.user.OAuth2User;
+import org.springframework.security.oauth2.client.endpoint.DefaultAuthorizationCodeTokenResponseClient;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
@@ -48,6 +46,7 @@ public class SecurityConfig {
 
     // RSAKeyProperties is a class that holds the public and private keys for JWT encoding and decoding.
     private final RSAKeyProperties keyProperties;
+    private final OAuth2LoginSuccessHandler oAuth2LoginSuccessHandler;
 
 
     /**
@@ -58,9 +57,9 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://127.0.0.1:8080", "http://localhost:8080"));
+        configuration.setAllowedOrigins(List.of("http://127.0.0.1:8080", "http://localhost:8080", "http://localhost:3000", "http://127.0.0.1:3000"));
         configuration.setAllowCredentials(true);
-        configuration.setAllowedHeaders(Arrays.asList("Access-Control-Allow-Headers", "Access-Control-Allow-Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Origin", "Cache-Control", "Content-Type", "Authorization"));
+        configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowedMethods(Arrays.asList("DELETE", "GET", "POST", "PATCH", "PUT"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
@@ -77,46 +76,48 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .cors(Customizer.withDefaults())
+//
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+
                 .csrf(AbstractHttpConfigurer::disable)
+
                 .authorizeHttpRequests(
                         auth -> {
-                            //allow AuthController login/register
+                            auth.requestMatchers(HttpMethod.GET, "/api/v1/**").permitAll();
+                            auth.requestMatchers(HttpMethod.POST, "/api/v1/**").authenticated();
+                            auth.requestMatchers(HttpMethod.PUT, "/api/v1/**").authenticated();
+                            auth.requestMatchers(HttpMethod.DELETE, "/api/v1/**").authenticated();
                             auth.requestMatchers("/api/v1/auth/**").permitAll();
-
-                            //secure the rest of the API
-                            auth.requestMatchers("/api/v1/**").authenticated();
-
-                            //  permit any request that does not start with /api/v1
-                            auth.anyRequest().permitAll(); //docs  //swagger
+                            auth.anyRequest().permitAll(); //permit all other requests, swagger-ui etc.
                         }
                 )
+
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
+
                 .oauth2ResourceServer(auth -> auth.jwt(jwtConfigurer -> {
                     var jwtAuthenticationConverter = new JwtAuthenticationConverter();
-
                     var grantedAuthoritiesConverter = new JwtGrantedAuthoritiesConverter();
-
                     grantedAuthoritiesConverter.setAuthorityPrefix("");
-
                     jwtAuthenticationConverter.setJwtGrantedAuthoritiesConverter(grantedAuthoritiesConverter);
                     jwtConfigurer.jwtAuthenticationConverter(jwtAuthenticationConverter);
                 }))
+
                 //oauth2 login configuration
                 .oauth2Login(oauth2 -> oauth2
-                        .loginPage("/login")
-                        .defaultSuccessUrl("/oauth2/success")
-                        .userInfoEndpoint(userInfo -> userInfo
-                                .userService(oauth2UserService())
+                        .loginPage("/login").permitAll()
+                        .authorizationEndpoint(authorization -> authorization
+                                .baseUri("/api/v1/auth/oauth2/authorize")
                         )
+                        .tokenEndpoint(token -> token
+                                .accessTokenResponseClient(new DefaultAuthorizationCodeTokenResponseClient())
+                        )
+                        .loginProcessingUrl("/login/oauth2/code/*")
+                        .successHandler(oAuth2LoginSuccessHandler)
                 )
                 .build();
     }
 
-    @Bean
-    public OAuth2UserService<OAuth2UserRequest, OAuth2User> oauth2UserService() {
-        return new DefaultOAuth2UserService();
-    }
+
 
     /**
      * This method creates a JwtDecoder bean for decoding JWTs.

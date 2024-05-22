@@ -13,7 +13,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Table(uniqueConstraints = {
-        // unique constraint for the email and username
+        // unique constraint for the email
         @UniqueConstraint(name = "UQ_USER_EMAIL",columnNames = {"email"}),
         @UniqueConstraint(name = "UQ_USER_USERNAME",columnNames = {"username"})
 })
@@ -54,8 +54,16 @@ public class User {
     )
     private Set<Role> roles;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "user_comments",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "comment_id", referencedColumnName = "id")
+    )
     private Set<Comment> comments;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private Set<Post> posts;
 
 
 }

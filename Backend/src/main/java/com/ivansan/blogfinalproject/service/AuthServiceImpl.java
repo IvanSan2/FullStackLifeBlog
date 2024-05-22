@@ -4,6 +4,7 @@ import com.ivansan.blogfinalproject.dto.LoginRequestDTO;
 import com.ivansan.blogfinalproject.dto.LoginResponseDTO;
 import com.ivansan.blogfinalproject.dto.UserRequestDTO;
 import com.ivansan.blogfinalproject.dto.UserResponseDTO;
+import com.ivansan.blogfinalproject.enums.AuthProvider;
 import com.ivansan.blogfinalproject.error.AuthenticationException;
 import com.ivansan.blogfinalproject.error.UserAlreadyExistsException;
 import com.ivansan.blogfinalproject.repository.RoleRepository;
@@ -35,6 +36,7 @@ public class AuthServiceImpl implements AuthService {
     private final RoleRepository roleRepository;
     private final JWTService jwtService;
 
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var user = getUserEntityOrThrow(username);
@@ -60,6 +62,9 @@ public class AuthServiceImpl implements AuthService {
 
         var role = roleRepository.findByNameIgnoreCase("ROLE_USER").orElseThrow();
         user.setRoles(Set.of(role));
+
+
+        user.setProvider(AuthProvider.LOCAL);
 
         // save the user
         var savedUser = userRepository.save(user);

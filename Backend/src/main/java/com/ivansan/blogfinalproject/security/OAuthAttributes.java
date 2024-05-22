@@ -9,8 +9,10 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 
+
 import java.util.Map;
 import java.util.Set;
+
 
 @Getter
 @Builder
@@ -23,20 +25,23 @@ public class OAuthAttributes {
     private AuthProvider provider;
     private String providerId;
 
-    public static OAuthAttributes of(Authentication authentication) {
+
+    public static OAuthAttributes of(Authentication authentication, String githubEmail) {
         OAuth2AuthenticationToken oauthToken = (OAuth2AuthenticationToken) authentication;
         String registrationId = oauthToken.getAuthorizedClientRegistrationId();
         OAuth2User oAuth2User = oauthToken.getPrincipal();
         Map<String, Object> attributes = oAuth2User.getAttributes();
         String userNameAttributeName = oauthToken.getPrincipal().getAttribute("name");
 
+
         if ("google".equals(registrationId)) {
             return ofGoogle(userNameAttributeName, attributes);
         } else if ("github".equals(registrationId)) {
-            return ofGithub(userNameAttributeName, attributes);
+            return ofGithub(userNameAttributeName, attributes, githubEmail);
         }
         throw new RuntimeException(STR."Unsupported OAuth2 provider: \{registrationId}");
     }
+
 
     private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
         return OAuthAttributes.builder()
@@ -50,10 +55,14 @@ public class OAuthAttributes {
                 .build();
     }
 
-    private static OAuthAttributes ofGithub(String userNameAttributeName, Map<String, Object> attributes) {
+
+
+    private static OAuthAttributes ofGithub(String userNameAttributeName, Map<String, Object> attributes, String githubEmail) {
+
+
         return OAuthAttributes.builder()
                 .name((String) attributes.get("name"))
-                .email((String) attributes.get("email"))
+                .email(githubEmail)
                 .picture((String) attributes.get("avatar_url"))
                 .attributes(attributes)
                 .nameAttributeKey(userNameAttributeName)
@@ -61,6 +70,8 @@ public class OAuthAttributes {
                 .providerId(((Integer) attributes.get("id")).toString())
                 .build();
     }
+
+
 
     public User toEntity() {
         Set<Role> roles = Set.of(Role.builder().name("ROLE_USER").build());

@@ -5,7 +5,6 @@ import Footer from "./components/footer/Footer";
 import { ThemeContextProvider } from "./context/ThemeContext";
 import ThemeProvider from "./providers/ThemeProvider";
 import localFont from "next/font/local";
-import AuthProvider from "./providers/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,7 +42,7 @@ export default function RootLayout({ children }) {
         ${bartinaSemibold.variable} 
         `}
       >
-        <AuthProvider>
+        
           <ThemeContextProvider>
             <ThemeProvider>
               <div className="container">
@@ -55,7 +54,7 @@ export default function RootLayout({ children }) {
               </div>
             </ThemeProvider>
           </ThemeContextProvider>
-        </AuthProvider>
+        
       </body>
     </html>
   );

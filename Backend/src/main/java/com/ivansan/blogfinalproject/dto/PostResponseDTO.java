@@ -19,7 +19,9 @@ public class PostResponseDTO {
     private String title;
     private String description;
     private String content;
+    private String image;
     private String createdAt;
     private String updatedAt;
     private List<CommentResponseDTO> comments;
+    private UserResponseDTO user;
 }

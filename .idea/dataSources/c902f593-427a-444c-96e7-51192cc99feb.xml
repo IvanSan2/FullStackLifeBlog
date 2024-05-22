@@ -1029,7 +1029,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </schema>
     <schema id="299" parent="1" name="blogfinalprojectdb">
       <Current>1</Current>
-      <LastIntrospectionLocalTimestamp>2024-05-11.15:43:28</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2024-05-19.16:51:49</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
     <schema id="300" parent="1" name="blogfinalproject2024db">
@@ -1074,32 +1074,32 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="310" parent="305" name="id">
+    <column id="310" parent="305" name="created_at">
+      <DasType>datetime(6)|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="311" parent="305" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="311" parent="305" name="comment">
-      <DasType>varchar(1000)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="312" parent="305" name="created_at">
-      <DasType>datetime(6)|0s</DasType>
+    <column id="312" parent="305" name="post_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
     <column id="313" parent="305" name="updated_at">
       <DasType>datetime(6)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="314" parent="305" name="post_id">
+    <column id="314" parent="305" name="user_id">
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="315" parent="305" name="user_id">
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="315" parent="305" name="comment">
+      <DasType>varchar(1000)|0s</DasType>
       <Position>6</Position>
     </column>
     <foreign-key id="316" parent="305" name="FKs1slvnkuemjsq2kj4h3vhx7i1">
@@ -1130,18 +1130,17 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="322" parent="306" name="id">
-      <AutoIncrement>3</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="322" parent="306" name="created_at">
+      <DasType>datetime(6)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="323" parent="306" name="content">
-      <DasType>tinytext|0s</DasType>
+    <column id="323" parent="306" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="324" parent="306" name="created_at">
+    <column id="324" parent="306" name="updated_at">
       <DasType>datetime(6)|0s</DasType>
       <Position>3</Position>
     </column>
@@ -1150,148 +1149,158 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="326" parent="306" name="title">
-      <DasType>varchar(255)|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>5</Position>
-    </column>
-    <column id="327" parent="306" name="updated_at">
-      <DasType>datetime(6)|0s</DasType>
-      <Position>6</Position>
-    </column>
-    <index id="328" parent="306" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="329" parent="306" name="UK2jm25hjrq6iv4w8y1dhi0d9p4">
-      <ColNames>title</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="330" parent="306" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="331" parent="306" name="UK2jm25hjrq6iv4w8y1dhi0d9p4">
-      <UnderlyingIndexName>UK2jm25hjrq6iv4w8y1dhi0d9p4</UnderlyingIndexName>
-    </key>
-    <column id="332" parent="307" name="id">
-      <AutoIncrement>2</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="333" parent="307" name="name">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <index id="334" parent="307" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="335" parent="307" name="UQ_ROLE_NAME">
-      <ColNames>name</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="336" parent="307" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="337" parent="307" name="UQ_ROLE_NAME">
-      <UnderlyingIndexName>UQ_ROLE_NAME</UnderlyingIndexName>
-    </key>
-    <column id="338" parent="308" name="id">
-      <AutoIncrement>4</AutoIncrement>
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
-    </column>
-    <column id="339" parent="308" name="email">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="340" parent="308" name="password">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>3</Position>
-    </column>
-    <column id="341" parent="308" name="username">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>4</Position>
-    </column>
-    <column id="342" parent="308" name="image">
+    <column id="326" parent="306" name="image">
       <DasType>varchar(255)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="343" parent="308" name="provider">
-      <DasType>enum(&apos;LOCAL&apos;, &apos;GOOGLE&apos;, &apos;GITHUB&apos;)|0e</DasType>
+    <column id="327" parent="306" name="title">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <column id="344" parent="308" name="provider_id">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="328" parent="306" name="content">
+      <DasType>longtext|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>7</Position>
     </column>
-    <index id="345" parent="308" name="PRIMARY">
-      <ColNames>id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="346" parent="308" name="UQ_USER_EMAIL">
-      <ColNames>email</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <index id="347" parent="308" name="UQ_USER_USERNAME">
-      <ColNames>username</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="348" parent="308" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <Primary>1</Primary>
-      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
-    </key>
-    <key id="349" parent="308" name="UQ_USER_EMAIL">
-      <UnderlyingIndexName>UQ_USER_EMAIL</UnderlyingIndexName>
-    </key>
-    <key id="350" parent="308" name="UQ_USER_USERNAME">
-      <UnderlyingIndexName>UQ_USER_USERNAME</UnderlyingIndexName>
-    </key>
-    <column id="351" parent="309" name="user_id">
+    <column id="329" parent="306" name="user_id">
       <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>1</Position>
+      <Position>8</Position>
     </column>
-    <column id="352" parent="309" name="role_id">
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>2</Position>
-    </column>
-    <foreign-key id="353" parent="309" name="FK55itppkw3i07do3h7qoclqd4k">
+    <foreign-key id="330" parent="306" name="FK72mt33dhhs48hf9gcqrq4fxte">
       <ColNames>user_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>user</RefTableName>
     </foreign-key>
-    <foreign-key id="354" parent="309" name="FKrhfovtciq1l558cw6udg0h0d3">
+    <index id="331" parent="306" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="332" parent="306" name="UK2jm25hjrq6iv4w8y1dhi0d9p4">
+      <ColNames>title</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="333" parent="306" name="FK72mt33dhhs48hf9gcqrq4fxte">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="334" parent="306" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="335" parent="306" name="UK2jm25hjrq6iv4w8y1dhi0d9p4">
+      <UnderlyingIndexName>UK2jm25hjrq6iv4w8y1dhi0d9p4</UnderlyingIndexName>
+    </key>
+    <column id="336" parent="307" name="id">
+      <AutoIncrement>3</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="337" parent="307" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <index id="338" parent="307" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="339" parent="307" name="UQ_ROLE_NAME">
+      <ColNames>name</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="340" parent="307" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="341" parent="307" name="UQ_ROLE_NAME">
+      <UnderlyingIndexName>UQ_ROLE_NAME</UnderlyingIndexName>
+    </key>
+    <column id="342" parent="308" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="343" parent="308" name="email">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="344" parent="308" name="image">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="345" parent="308" name="password">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="346" parent="308" name="provider_id">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="347" parent="308" name="username">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="348" parent="308" name="provider">
+      <DasType>enum(&apos;LOCAL&apos;, &apos;GOOGLE&apos;, &apos;GITHUB&apos;)|0e</DasType>
+      <Position>7</Position>
+    </column>
+    <index id="349" parent="308" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="350" parent="308" name="UQ_USER_EMAIL">
+      <ColNames>email</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="351" parent="308" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="352" parent="308" name="UQ_USER_EMAIL">
+      <UnderlyingIndexName>UQ_USER_EMAIL</UnderlyingIndexName>
+    </key>
+    <column id="353" parent="309" name="role_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="354" parent="309" name="user_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="355" parent="309" name="FKrhfovtciq1l558cw6udg0h0d3">
       <ColNames>role_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>role</RefTableName>
     </foreign-key>
-    <index id="355" parent="309" name="PRIMARY">
-      <ColNames>user_id
-role_id</ColNames>
+    <foreign-key id="356" parent="309" name="FK55itppkw3i07do3h7qoclqd4k">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>user</RefTableName>
+    </foreign-key>
+    <index id="357" parent="309" name="PRIMARY">
+      <ColNames>role_id
+user_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="356" parent="309" name="FKrhfovtciq1l558cw6udg0h0d3">
-      <ColNames>role_id</ColNames>
+    <index id="358" parent="309" name="FK55itppkw3i07do3h7qoclqd4k">
+      <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="357" parent="309" name="PRIMARY">
+    <key id="359" parent="309" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

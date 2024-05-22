@@ -1,12 +1,10 @@
 package com.ivansan.blogfinalproject.service;
 
-import com.ivansan.blogfinalproject.dto.LoginRequestDTO;
 import com.ivansan.blogfinalproject.dto.LoginResponseDTO;
-import com.ivansan.blogfinalproject.dto.UserRequestDTO;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 
-public interface OAuth2Service extends UserDetailsService {
-
-    LoginResponseDTO registerAndLogin(Authentication authentication);
+public interface OAuth2Service {
+    LoginResponseDTO registerAndLogin(OAuth2AuthenticationToken authentication);
 }

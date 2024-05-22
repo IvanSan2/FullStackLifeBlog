@@ -5,11 +5,13 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.HandlerMapping;
 
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.time.LocalDateTime;
@@ -119,7 +121,7 @@ public class BlogExceptionHandler {
     private Map<String, Object>
     getExcMap(
             Exception exc,
-            HandlerMethod method,
+           HandlerMethod method,
             HttpServletRequest request
     ) {
         var controller = method.getMethod().getDeclaringClass().getSimpleName();
@@ -135,4 +137,35 @@ public class BlogExceptionHandler {
                 "status", HttpStatus.BAD_REQUEST.value()
         );
     }
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+    @ExceptionHandler(OAuth2AuthenticationException.class)
+    public ResponseEntity<Map<String, Object>> handleOAuth2AuthenticationException(
+            OAuth2AuthenticationException e,
+            HttpServletRequest request
+    ) {
+        var map = new HashMap<String, Object>();
+        map.put("error", "OAuth2 Authentication Failed");
+        map.put("message", e.getMessage());
+        map.put("path", request.getRequestURI());
+        map.put("status", HttpStatus.UNAUTHORIZED.value());
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(map);
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(IllegalStateException.class)
+    public ResponseEntity<Map<String, Object>> handleIllegalStateException(
+            IllegalStateException e,
+            HttpServletRequest request
+    ) {
+        var map = new HashMap<String, Object>();
+        map.put("error", "Illegal State");
+        map.put("message", e.getMessage());
+        map.put("path", request.getRequestURI());
+        map.put("status", HttpStatus.NOT_FOUND.value());
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(map);
+    }
+
+
+
 }

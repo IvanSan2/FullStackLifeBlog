@@ -43,7 +43,9 @@ public class SQLRunner implements CommandLineRunner {
                             AuthProvider.LOCAL,
                             null,
                             Set.of(adminRole,userRole),
-                            Set.of()
+                            null,
+                            null
+
                     )
             );
 
@@ -57,7 +59,8 @@ public class SQLRunner implements CommandLineRunner {
                             AuthProvider.LOCAL,
                             null,
                             Set.of(userRole),
-                            Set.of()
+                            null,
+                            null
                     )
             );
         }

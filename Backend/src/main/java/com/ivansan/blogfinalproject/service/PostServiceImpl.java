@@ -4,14 +4,17 @@ import com.ivansan.blogfinalproject.dto.PostCreateDTO;
 import com.ivansan.blogfinalproject.dto.PostResponseDTO;
 import com.ivansan.blogfinalproject.dto.PostsListDTO;
 import com.ivansan.blogfinalproject.entity.Post;
+import com.ivansan.blogfinalproject.entity.User;
 import com.ivansan.blogfinalproject.error.PaginationException;
 import com.ivansan.blogfinalproject.error.ResourceNotFoundException;
 import com.ivansan.blogfinalproject.repository.PostRepository;
+import com.ivansan.blogfinalproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -24,10 +27,18 @@ public class PostServiceImpl implements PostService{
     private final PostRepository postRepository;
     // modelMapper is used to convert entity to dto
     private final ModelMapper modelMapper;
+    private final UserRepository userRepository;
+
     @Override
-    public PostResponseDTO createPost(PostCreateDTO dto) {
+    public PostResponseDTO createPost(PostCreateDTO dto, Authentication authentication) {
+        //0: get the current user
+        // - authentication is used to get the current user
+        User user = userRepository.findByUsernameIgnoreCaseOrEmailIsIgnoreCase(authentication.getName(), authentication.getName())
+                .orElseThrow(()-> new ResourceNotFoundException("User", "email", authentication.getName()));
+
         //1: convert dto to entity
         Post post = modelMapper.map(dto, Post.class);
+        post.setUser(user);
         //2: save entity to database
         var saved = postRepository.save(post);
         //3: return response dto
@@ -89,6 +100,7 @@ public class PostServiceImpl implements PostService{
         post.setTitle(dto.getTitle());
         post.setDescription(dto.getDescription());
         post.setContent(dto.getContent());
+        post.setImage(dto.getImage());
         //3: save post to database
         var saved = postRepository.save(post);
         //4: return response dto

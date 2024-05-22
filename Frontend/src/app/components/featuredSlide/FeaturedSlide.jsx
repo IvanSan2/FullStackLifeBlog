@@ -1,7 +1,7 @@
 import styles from "./featuredSlide.module.css";
 import Image from "next/image";
 import noImage from "../../../../public/no-image.svg";
-// import noImage from "../icons/NoImage";
+import userImage from "../../../../public/no-user-image.gif";
 
 export default function FeaturedSlide({ slide }) {
   return (
@@ -9,10 +9,11 @@ export default function FeaturedSlide({ slide }) {
       <div className={styles.infoContainer}>
         <div className={styles.imageContainer}>
           <Image
-            src={slide.img ? slide.img : noImage}
+            src={slide.image ? slide.image : noImage}
             alt=""
-            fill
-            className={slide.img ? styles.image : { objectFit: "contain" }}
+            fill="responsive"
+            priority={true}
+            className={styles.image}
           />
           <div className={styles.textContainer}>
             {/* max 70 symbols for title */}
@@ -22,8 +23,15 @@ export default function FeaturedSlide({ slide }) {
                 : slide.title}
             </h1>
             <div className={styles.user}>
+              <Image
+                src={slide.user.image ? slide.user.image : userImage}
+                alt=""
+                width={50}
+                height={50}
+                className={styles.userImage}
+              />
               <div className={styles.userTextContainer}>
-                <span className={styles.username}>Ivan San</span>
+                <span className={styles.username}>{slide.user.username}</span>
                 <span className={styles.date}>
                   {
                     //if the date is more than 1 day ago, show the date, else show the time, if the date is less then 5 hours ago, show "just now"

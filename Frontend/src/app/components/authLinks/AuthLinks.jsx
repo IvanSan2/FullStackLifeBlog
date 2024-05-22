@@ -6,15 +6,17 @@ import { useState, useContext } from "react";
 import Image from "next/image";
 import plusIcon from "../../../../public/plus_icon.svg";
 import { ThemeContext } from "@/app/context/ThemeContext";
-import { signOut } from "next-auth/react";
-import { useSession } from "next-auth/react";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
-  const { data, status } = useSession();
+  const [status, setStatus] = useState("notauthenticated");
 
-  console.log(data);
+  const handleLogout = () => {
+    console.log("logout");
+    // remove jwt token from local storage
+    localStorage.removeItem("jwt");
+  };
 
   return (
     <>
@@ -38,7 +40,7 @@ const AuthLinks = () => {
               className={styles.plusIcon}
             />
           </Link>
-          <Link href="/" className={styles.link} onClick={signOut}>
+          <Link href="/" className={styles.link} onClick={handleLogout}>
             Logout
           </Link>
         </>

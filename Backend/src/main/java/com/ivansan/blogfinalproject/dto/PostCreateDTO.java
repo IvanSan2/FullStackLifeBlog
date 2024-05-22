@@ -24,4 +24,5 @@ public class PostCreateDTO {
     @NotNull
     @Size(min = 2)
     private String content;
+    private String image;
 }

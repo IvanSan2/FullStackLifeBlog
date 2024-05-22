@@ -10,13 +10,11 @@ public class PasswordGeneratorService {
         StringBuilder password;
         do {
             password = new StringBuilder();
-            // Добавляем обязательные символы
             password.append(getRandomLowercase());
             password.append(getRandomUppercase());
             password.append(getRandomDigit());
             password.append(getRandomSpecialChar());
 
-            // Добавляем оставшиеся символы
             int remainingLength = (int) (Math.random() * 5) + 4; // Длина от 4 до 8 символов
             for (int i = 0; i < remainingLength; i++) {
                 int randomChoice = (int) (Math.random() * 4);
@@ -28,7 +26,6 @@ public class PasswordGeneratorService {
                 }
             }
 
-            // Перемешиваем символы в пароле
             for (int i = 0; i < password.length(); i++) {
                 int randomIndex = (int) (Math.random() * password.length());
                 char temp = password.charAt(i);

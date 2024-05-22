@@ -4,7 +4,44 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment="." />
+    <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/OAuth2LoginSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c902f593-427a-444c-96e7-51192cc99feb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c902f593-427a-444c-96e7-51192cc99feb.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/SQLRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/SQLRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/PostCreateDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/PostCreateDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/PostResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/PostResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/entity/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/entity/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/enums/AuthProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/enums/AuthProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/BlogExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/BlogExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/OAuthAttributes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/OAuthAttributes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/OAuth2Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/OAuth2Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/OAuth2ServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/OAuth2ServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PasswordGeneratorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PasswordGeneratorService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PostServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/public/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/api/auth/[...nextauth]/route.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/authLinks/AuthLinks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/authLinks/AuthLinks.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featured/Featured.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featured/Featured.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/FeaturedSlide.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/FeaturedSlide.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/featuredSlide.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/featuredSlide.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/login/loginPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/login/loginPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/login/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/login/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/providers/AuthProvider.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/utils/auth.js" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -78,6 +115,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;Spring Boot.BlogFinalProjectApplication.executor&quot;: &quot;Run&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.preview.features.used&quot;: &quot;true&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/ciklo/OneDrive/GitHub/MyProjects/FullStackLifeBlog/Backend/src/main/java/com/ivansan/blogfinalproject/error&quot;,
@@ -90,6 +128,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;rest.client.default.execution.environment&quot;: &quot;dev&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -171,7 +210,21 @@
       <workItem from="1715258973324" duration="671000" />
       <workItem from="1715439447237" duration="16274000" />
       <workItem from="1715495045212" duration="198000" />
-      <workItem from="1715526477758" duration="6795000" />
+      <workItem from="1715526477758" duration="9280000" />
+      <workItem from="1715595773626" duration="4597000" />
+      <workItem from="1715770009588" duration="2989000" />
+      <workItem from="1715967780438" duration="135000" />
+      <workItem from="1715967943274" duration="1200000" />
+      <workItem from="1716029732757" duration="25997000" />
+      <workItem from="1716066210949" duration="1595000" />
+      <workItem from="1716068770885" duration="353000" />
+      <workItem from="1716098632510" duration="5153000" />
+      <workItem from="1716103896634" duration="557000" />
+      <workItem from="1716105991271" duration="3841000" />
+      <workItem from="1716116826726" duration="209000" />
+      <workItem from="1716136541524" duration="2851000" />
+      <workItem from="1716202545142" duration="5827000" />
+      <workItem from="1716368135082" duration="1399000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
@@ -197,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715533499784</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=".">
+      <option name="closed" value="true" />
+      <created>1715533530581</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715533530581</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
