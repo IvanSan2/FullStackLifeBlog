@@ -16,21 +16,18 @@
   overflow: hidden;
 }
 
-.titleInput::placeholder {
-  color: var(--softTextColor);
-}
-
 .descriptionInput {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 1.5rem;
   font-style: italic;
   background-color: var(--bg);
-  color: var(--textColor);
+  color: var(--softTextColor);
   border: none;
   outline: none;
   overflow: hidden;
   cursor: text;
+  resize: none;
 }
 
 .descriptionInput[contenteditable]:empty::before {
@@ -91,4 +88,14 @@
 .contentTitle {
   margin-top: 20px;
   color: var(--softTextColor);
+}
+
+.publishBtn {
+  margin-top: 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  width: max-content;
+  padding: 15px 25px;
+  cursor: pointer;
 }

@@ -53,8 +53,8 @@ export default function FeaturedSlider({ slides }) {
             transform: `translateX(-${currentIndex * sliderWidth}px)`,
           }}
         >
-          {slides.map((slide) => (
-            <div className={styles.slide}>
+          {slides.map((slide, i) => (
+            <div key={i} className={styles.slide}>
               <FeaturedSlide slide={slide} key={slide.id} />
             </div>
           ))}

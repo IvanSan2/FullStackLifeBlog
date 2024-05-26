@@ -49,9 +49,7 @@ const Featured = () => {
         const response = await fetch(
           "/api/v1/posts?pageNo=0&pageSize=5&sortBy=createdAt&sortOrder=desc"
         );
-        console.log(response);
         const data = await response.json();
-        console.log(data);
         setPosts(data.posts);
         setLoading(false);
       } catch (error) {

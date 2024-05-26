@@ -1,6 +1,7 @@
 package com.ivansan.blogfinalproject.config;
 
 
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -16,6 +17,8 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class OAuth2LoginSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {
 
+//    private final OAuth2Service;
+
 
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
@@ -25,8 +28,10 @@ public class OAuth2LoginSuccessHandler extends SavedRequestAwareAuthenticationSu
             logger.info("OAuth2AuthenticationToken");
             // save the authentication in the session
             request.getSession().setAttribute("oauth2Authentication", authentication);
+
             // redirect to the success page with the token in the URL
-            response.sendRedirect("/api/v1/auth/oauth2/success");
+            String redirectUri = "http://localhost:3000/oauth2callback";
+            response.sendRedirect(redirectUri);
         }
         super.onAuthenticationSuccess(request, response, authentication);
     }

@@ -16,7 +16,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 
-import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -29,7 +28,7 @@ import java.util.Map;
 public class AuthController {
     private final AuthService authService;
     private final OAuth2Service oAuth2Service;
-    private final OAuth2AuthorizedClientService authorizedClientService;
+
 
     @PostMapping("/login")
     public ResponseEntity<LoginResponseDTO> login(@RequestBody LoginRequestDTO dto) {
@@ -52,7 +51,7 @@ public class AuthController {
         // Empty method that redirects to the GitHub authorization page
     }
 
-
+    @Hidden
     @GetMapping("/oauth2/success")
     public ResponseEntity<LoginResponseDTO> oauth2Success(HttpSession session) {
         OAuth2AuthenticationToken authentication = (OAuth2AuthenticationToken) session.getAttribute("oauth2Authentication");
@@ -67,6 +66,10 @@ public class AuthController {
         }
     }
 
+//    @GetMapping("refresh-token")
+//    public ResponseEntity<LoginResponseDTO> refreshToken(Authentication authentication) {
+//        return ResponseEntity.ok(authService.refreshToken(authentication));
+//    }
 
     @Hidden
     @GetMapping("/me")

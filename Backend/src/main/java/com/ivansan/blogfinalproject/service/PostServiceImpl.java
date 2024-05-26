@@ -33,7 +33,7 @@ public class PostServiceImpl implements PostService{
     public PostResponseDTO createPost(PostCreateDTO dto, Authentication authentication) {
         //0: get the current user
         // - authentication is used to get the current user
-        User user = userRepository.findByUsernameIgnoreCaseOrEmailIsIgnoreCase(authentication.getName(), authentication.getName())
+        User user = userRepository.findByUsernameOrEmailIgnoreCase(authentication.getName(), authentication.getName())
                 .orElseThrow(()-> new ResourceNotFoundException("User", "email", authentication.getName()));
 
         //1: convert dto to entity

@@ -102,7 +102,7 @@ public class AuthServiceImpl implements AuthService {
 
 
     com.ivansan.blogfinalproject.entity.User getUserEntityOrThrow(String username) {
-        return userRepository.findByUsernameIgnoreCase(username)
+        return userRepository.findByUsernameOrEmailIgnoreCase(username, username)
                 .orElseThrow(
                         () -> new UsernameNotFoundException(STR."User \{username} not found.")
                 );

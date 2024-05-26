@@ -6,21 +6,17 @@ import { useState, useContext } from "react";
 import Image from "next/image";
 import plusIcon from "../../../../public/plus_icon.svg";
 import { ThemeContext } from "@/app/context/ThemeContext";
+import { useAuth } from "@/app/context/AuthContext";
 
 const AuthLinks = () => {
   const [open, setOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
-  const [status, setStatus] = useState("notauthenticated");
-
-  const handleLogout = () => {
-    console.log("logout");
-    // remove jwt token from local storage
-    localStorage.removeItem("jwt");
-  };
+  // const [status, setStatus] = useState("notauthenticated");
+  const { isLoggedIn, logout } = useAuth();
 
   return (
     <>
-      {status === "notauthenticated" ? (
+      {!isLoggedIn ? (
         <>
           <Link href="/login" className={styles.link}>
             Login
@@ -40,7 +36,7 @@ const AuthLinks = () => {
               className={styles.plusIcon}
             />
           </Link>
-          <Link href="/" className={styles.link} onClick={handleLogout}>
+          <Link href="/" className={styles.link} onClick={logout}>
             Logout
           </Link>
         </>
@@ -55,7 +51,7 @@ const AuthLinks = () => {
           <Link href="/">Home</Link>
           <Link href="/">Contact</Link>
           <Link href="/">About</Link>
-          {status === "notauthenticated" ? (
+          {!isLoggedIn ? (
             <>
               <Link href="/login">Login</Link>
             </>

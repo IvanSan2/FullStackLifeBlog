@@ -1,5 +1,6 @@
 .container {
   padding-top: 150px;
+  min-height: calc(100vh - 250px);
 }
 
 .textContainer {
@@ -102,7 +103,7 @@
 }
 
 .description p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-style: italic;
   line-height: 1.2;
   color: var(--softTextColor);
@@ -126,7 +127,11 @@
     font-size: 48px;
   }
   .description p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+  }
+
+  .container {
+    min-height: calc(100vh - 400px);
   }
 }
 

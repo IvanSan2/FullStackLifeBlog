@@ -1,0 +1,19 @@
+.container {
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 250px);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    height: calc(100vh - 400px);
+  }
+}

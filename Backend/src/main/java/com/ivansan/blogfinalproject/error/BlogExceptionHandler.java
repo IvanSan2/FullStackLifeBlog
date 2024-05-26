@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.method.HandlerMethod;
-import org.springframework.web.servlet.HandlerMapping;
 
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.time.LocalDateTime;
@@ -81,7 +80,7 @@ public class BlogExceptionHandler {
         var map = new HashMap<>(getExcMap(exc, method, request));
 
         exc.getBindingResult().getFieldErrors().forEach(
-                e -> map.put("Field_" + e.getField(), e.getDefaultMessage())
+                e -> map.put(STR."Field_\{e.getField()}", e.getDefaultMessage())
         );
         //log to log server()
         return ResponseEntity.badRequest().body(map);

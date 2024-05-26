@@ -6,55 +6,45 @@ import githubIcon from "../../../public/github_icon.png";
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { useRouter } from "next/navigation";
+import { useAuth } from "../context/AuthContext";
 
 const page = () => {
-  //export theme to use in other components
   const { theme } = useContext(ThemeContext);
   const router = useRouter();
-  const [jwt, setJwt] = useState(null);
-
-  useEffect(() => {
-    const getJwtFromUrl = async () => {
-      const { jwt: token } = router.query;
-      if (token) {
-        try {
-          const response = await fetch(
-            `/api/v1/auth/oauth2/success`,
-            {
-              credentials: "include",
-            }
-          );
-          const data = await response.json();
-          const { jwt } = data;
-          if (jwt) {
-            console.log("JWT found in the response:", jwt);
-            setJwt(jwt);
-            saveJwtToLocalStorage(jwt);
-            router.replace("/loginPage", undefined, { shallow: true });
-          } else {
-            console.error("JWT not found in the response");
-          }
-        } catch (error) {
-          console.error("Error fetching JWT:", error);
-        }
-      }
-    };
-
-    getJwtFromUrl();
-  }, [router]);
-
-  const saveJwtToLocalStorage = (token) => {
-    localStorage.setItem("jwt", token);
-  };
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { login } = useAuth();
 
   const handleGoogleLogin = () => {
-    window.location.href =
-      "/api/v1/auth/oauth2/authorize/google?redirect_uri=/loginPage";
+    window.location.href = "/api/v1/auth/oauth2/authorize/google";
   };
 
   const handleGithubLogin = () => {
-    window.location.href =
-      "/api/v1/auth/oauth2/authorize/github?redirect_uri=/loginPage";
+    window.location.href = "/api/v1/auth/oauth2/authorize/github";
+  };
+
+  const formLogin = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("api/v1/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: email,
+          password: password,
+        }),
+      });
+
+      const data = await response.json();
+      const jwt = data.jwt;
+      login(jwt);
+      router.push("/");
+    } catch (error) {
+      console.error("Error logging in:", error);
+    }
   };
 
   return (
@@ -64,18 +54,24 @@ const page = () => {
         <div className={styles.loginFormContainer}>
           <form className={styles.loginForm}>
             <input
-              type="email"
+              type="text"
               name="email"
-              placeholder="Email"
+              placeholder="Email or Username"
               className={styles.input}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
               name="password"
               placeholder="Password"
               className={styles.input}
+              onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" className={styles.submitButton}>
+            <button
+              type="submit"
+              className={styles.submitButton}
+              onClick={formLogin}
+            >
               Login
             </button>
           </form>
@@ -102,8 +98,6 @@ const page = () => {
             />
             Log in with Google
           </div>
-          {/* if user is in database, give him jwt token */}
-          {/* if user is not in database, add him to database and give him jwt token */}
 
           <div className={styles.socialButton} onClick={handleGithubLogin}>
             <Image

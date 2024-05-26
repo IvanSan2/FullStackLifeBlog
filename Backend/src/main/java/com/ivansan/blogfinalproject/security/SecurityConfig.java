@@ -84,9 +84,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(
                         auth -> {
                             auth.requestMatchers(HttpMethod.GET, "/api/v1/**").permitAll();
-                            auth.requestMatchers(HttpMethod.POST, "/api/v1/**").authenticated();
-                            auth.requestMatchers(HttpMethod.PUT, "/api/v1/**").authenticated();
-                            auth.requestMatchers(HttpMethod.DELETE, "/api/v1/**").authenticated();
+//                            auth.requestMatchers(HttpMethod.POST, "/api/v1/**").authenticated();
+//                            auth.requestMatchers(HttpMethod.PUT, "/api/v1/**").authenticated();
+//                            auth.requestMatchers(HttpMethod.DELETE, "/api/v1/**").authenticated();
                             auth.requestMatchers("/api/v1/auth/**").permitAll();
                             auth.anyRequest().permitAll(); //permit all other requests, swagger-ui etc.
                         }
@@ -113,6 +113,9 @@ public class SecurityConfig {
                         )
                         .loginProcessingUrl("/login/oauth2/code/*")
                         .successHandler(oAuth2LoginSuccessHandler)
+
+
+
                 )
                 .build();
     }
