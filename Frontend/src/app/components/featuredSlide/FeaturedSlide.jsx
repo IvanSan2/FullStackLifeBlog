@@ -2,10 +2,16 @@ import styles from "./featuredSlide.module.css";
 import Image from "next/image";
 import noImage from "../../../../public/no-image.svg";
 import userImage from "../../../../public/no-user-image.gif";
+import { useRouter } from "next/navigation";
 
 export default function FeaturedSlide({ slide }) {
+  const router = useRouter();
+
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onClick={() => router.push(`/posts/${slide.id}`)}
+    >
       <div className={styles.infoContainer}>
         <div className={styles.imageContainer}>
           <Image
@@ -51,7 +57,7 @@ export default function FeaturedSlide({ slide }) {
                         }h and ${Math.floor(
                           (new Date().getTime() -
                             new Date(slide.createdAt).getTime()) /
-                            600000
+                            6000000
                         )}m
                          ago`
                   }

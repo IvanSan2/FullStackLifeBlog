@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./comment.module.css";
 import HeartIcon from "../icons/HeartIcon";
+import noUserImage from "../../../../public/no-user-image.gif";
 
 export default function Comment({
   liked = false,
@@ -15,7 +16,7 @@ export default function Comment({
       <div className={styles.comment}>
         <div className={styles.userImageContainer}>
           <Image
-            src={userImage}
+            src={userImage?userImage:noUserImage}
             alt=""
             width={50}
             height={50}

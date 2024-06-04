@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class CommentResponseDTO {
     private Long id;
-    private UserResponseDTO user;
     private String comment;
     private String createdAt;
     private String updatedAt;
+    private UserResponseDTO user;
 }

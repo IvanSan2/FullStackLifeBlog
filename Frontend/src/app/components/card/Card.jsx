@@ -1,16 +1,16 @@
 import React from "react";
 import styles from "./card.module.css";
 import Image from "next/image";
-import image from "../../../../public/p1.jpeg";
+import noImage from "../../../../public/no-image.svg";
 import Link from "next/link";
 import { getRandomPostShape } from "../../utils/math";
 
-const Card = () => {
+const Card = ({ post }) => {
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
         <Image
-          src={image}
+          src={post.image ? post.image : noImage}
           alt=""
           fill
           className={styles.image}
@@ -22,7 +22,10 @@ const Card = () => {
       </div>
       <div className={styles.textContainer}>
         <div className={styles.detail}>
-          <span className={styles.date}>11.2.2023 - </span>
+          <span className={styles.date}>
+            {new Date(post.createdAt).toLocaleDateString()} -{" "}
+          </span>
+
           <span
             className={styles.category}
             style={{ background: "var(--categoryWeb)" }}
@@ -30,18 +33,19 @@ const Card = () => {
             Web
           </span>
         </div>
-        <Link href="/post">
+        <Link href={`/posts/${post.id}`}>
           <h2 className={styles.title}>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            {post.title.length > 70
+              ? post.title.slice(0, 67) + "..."
+              : post.title}
           </h2>
         </Link>
         <p className={styles.description}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas sit
-          vero, quisquam eaque porro cumque perferendis ipsam. Officia possimus
-          ipsum, aut, similique ullam, molestias iure voluptates nostrum
-          reprehenderit in tempora?
+          {post.description.length > 250
+            ? post.description.slice(0, 247) + "..."
+            : post.description}
         </p>
-        <Link href="/post" className={styles.link}>
+        <Link href={`/posts/${post.id}`} className={styles.link}>
           Read more
         </Link>
       </div>

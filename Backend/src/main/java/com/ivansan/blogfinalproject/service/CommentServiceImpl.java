@@ -5,6 +5,7 @@ import com.ivansan.blogfinalproject.dto.CommentResponseDTO;
 import com.ivansan.blogfinalproject.dto.CommentsListDTO;
 import com.ivansan.blogfinalproject.dto.UserResponseDTO;
 import com.ivansan.blogfinalproject.entity.Comment;
+import com.ivansan.blogfinalproject.entity.User;
 import com.ivansan.blogfinalproject.error.AuthenticationException;
 import com.ivansan.blogfinalproject.error.PaginationException;
 import com.ivansan.blogfinalproject.error.ResourceNotFoundException;
@@ -33,8 +34,8 @@ public class CommentServiceImpl implements CommentService {
     public CommentResponseDTO createComment(long postId, CommentRequestDTO dto, Authentication authentication) {
         //1: convert dto to entity
         var post = postService.getPostOrThrow(postId);
-        var user = userRepository.findByUsernameIgnoreCase(authentication.getName())
-                .orElseThrow(AuthenticationException::new);
+        User user = userRepository.findByUsernameOrEmailIgnoreCase(authentication.getName(), authentication.getName())
+                .orElseThrow(()-> new ResourceNotFoundException("User", "email", authentication.getName()));
 
 
         //2: save entity to database

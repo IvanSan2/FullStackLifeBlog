@@ -18,9 +18,15 @@ const NavBar = () => {
   return (
     <nav className={styles.container}>
       <div className={theme === "light" ? styles.social : styles.social_dark}>
-        <Image src={instagram} alt="instagram" width={24} height={24} />
-        <Image src={linkedin} alt="linkedin" width={24} height={24} />
-        <Image src={github} alt="github" width={24} height={24} />
+        <Link href="https://www.instagram.com/sann_ivan/" target="_blank">
+          <Image src={instagram} alt="instagram" width={24} height={24} />
+        </Link>
+        <Link href="https://www.linkedin.com/in/ivansann/" target="_blank">
+          <Image src={linkedin} alt="linkedin" width={24} height={24} />
+        </Link>
+        <Link href="https://github.com/IvanSan2" target="_blank">
+          <Image src={github} alt="github" width={24} height={24} />
+        </Link>
       </div>
       <Link href="/" className={styles.logo}>
         FullstackLife

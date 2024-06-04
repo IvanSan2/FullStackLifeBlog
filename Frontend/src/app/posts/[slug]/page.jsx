@@ -8,10 +8,11 @@ import { getRandomPostPageShape } from "../../utils/math";
 import { useEffect, useState } from "react";
 import MarkdownPreview from "../../components/markdown/MarkdownPreview";
 import axios from "axios";
+import { useAuth } from "../../context/AuthContext";
 
 const SinglePage = ({ params }) => {
+  const { jwt, isLoggedIn  } = useAuth();
   const { slug } = params;
-  console.log(slug);
   const [post, setPost] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +23,6 @@ const SinglePage = ({ params }) => {
       const data = await response.data;
       setPost(data);
       setIsLoading(false);
-      console.log(data);
     } catch (error) {
       setIsLoading(false);
       console.error(error);
@@ -156,7 +156,7 @@ const SinglePage = ({ params }) => {
           </div>
           <MarkdownPreview content={post.content} />
           <div className={styles.comment}>
-            <Comments />
+            <Comments comments={post.comments} postId={slug} />
           </div>
         </div>
         <Menu />

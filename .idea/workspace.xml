@@ -5,30 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment=".">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/OAuth2LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/OAuth2LoginSuccessHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/PostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/BlogExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/error/BlogExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/[slug]/page.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/[slug]/singlePage.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/authLinks/AuthLinks.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/authLinks/AuthLinks.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featured/Featured.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featured/Featured.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/CommentResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/CommentResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/card/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/cardList/CardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/cardList/CardList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/cardList/cardList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/cardList/cardList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/comment/Comment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/comment/Comment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/comments/Comments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/comments/Comments.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/FeaturedSlide.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/FeaturedSlide.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/featuredSlide.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/featuredSlide.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlider/FeaturedSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlider/FeaturedSlider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/markdown/MarkdownEditor.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/markdown/MarkdownEditor.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/markdown/MarkdownPreview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/markdown/MarkdownPreview.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/login/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/login/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlider/featuredSlider.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlider/featuredSlider.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/icons/SendIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/icons/SendIcon.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/navbar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/navbar/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/posts/[slug]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/posts/[slug]/page.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/write/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/write/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/write/writePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/write/writePage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -222,6 +214,10 @@
       <workItem from="1716463148231" duration="11900000" />
       <workItem from="1716637599864" duration="3007000" />
       <workItem from="1716717354779" duration="1256000" />
+      <workItem from="1716742032354" duration="2063000" />
+      <workItem from="1716789478550" duration="948000" />
+      <workItem from="1716880840989" duration="600000" />
+      <workItem from="1717430113186" duration="4297000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />

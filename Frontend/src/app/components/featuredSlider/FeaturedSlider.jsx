@@ -3,6 +3,7 @@ import styles from "./featuredSlider.module.css";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import FeaturedSlide from "../featuredSlide/FeaturedSlide";
 import { getRandomLogoShape } from "../../utils/math";
+import { useRouter } from "next/navigation";
 
 export default function FeaturedSlider({ slides }) {
   // ref - to get the width of the slider container
@@ -11,6 +12,8 @@ export default function FeaturedSlider({ slides }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   // width of the slider container
   const [sliderWidth, setSliderWidth] = useState(0);
+
+  const router = useRouter();
 
   // get the width of the slider container on mount
   useLayoutEffect(() => {

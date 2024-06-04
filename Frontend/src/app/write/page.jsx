@@ -11,14 +11,16 @@ import { useRouter } from "next/navigation";
 import imageCompression from "browser-image-compression";
 
 const WritePage = () => {
-  const { jwt } = useAuth();
+  const { jwt, isLoggedIn } = useAuth();
   const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState(null);
-  const [imageFile, setImageFile] = useState(null);
 
+  if (!isLoggedIn) {
+    router.push("/login");
+  }
   const handleData = (data) => {
     setContent(data);
   };
@@ -69,6 +71,8 @@ const WritePage = () => {
         { headers: { Authorization: `Bearer ${jwt}` } }
       );
 
+      
+
       const status = response.status;
       if (status === 201) {
         router.push("/");
@@ -81,59 +85,61 @@ const WritePage = () => {
   const categories = ["web", "mobile", "java", "design", "lifestyle"];
 
   return (
-    <div className={styles.container}>
-      <div
-        className={styles.imageContainer}
-        style={{ borderRadius: getRandomPostPageShape() }}
-      >
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleOnChange}
-          className={styles.imageUploadBtn}
-        />
-        {image && (
-          <img
-            id="output"
-            src={image}
-            className={styles.image}
-            alt="cover image"
+    isLoggedIn && (
+      <div className={styles.container}>
+        <div
+          className={styles.imageContainer}
+          style={{ borderRadius: getRandomPostPageShape() }}
+        >
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleOnChange}
+            className={styles.imageUploadBtn}
           />
-        )}
-      </div>
-      <input
-        type="text"
-        placeholder="Title"
-        onChange={(e) => setTitle(e.target.value)}
-        className={styles.titleInput}
-      />
-      <textarea
-        type="text"
-        placeholder="Description"
-        onChange={(e) => {
-          setDescription(e.target.value);
-        }}
-        className={styles.descriptionInput}
-        role="textbox"
-        contentEditable
-      />
-      <div className={styles.catContainer}></div>
-      <div className={styles.contentTitle}>
-        Use Markdown to write and format posts.
-      </div>
-      <div className={styles.editor}>
-        <MarkdownEditor onData={handleData} />
-      </div>
-      <button className={styles.publishBtn} onClick={handlePublish}>
-        Publish
-      </button>
+          {image && (
+            <img
+              id="output"
+              src={image}
+              className={styles.image}
+              alt="cover image"
+            />
+          )}
+        </div>
+        <input
+          type="text"
+          placeholder="Title"
+          onChange={(e) => setTitle(e.target.value)}
+          className={styles.titleInput}
+        />
+        <textarea
+          type="text"
+          placeholder="Description"
+          onChange={(e) => {
+            setDescription(e.target.value);
+          }}
+          className={styles.descriptionInput}
+          role="textbox"
+          contentEditable
+        />
+        <div className={styles.catContainer}></div>
+        <div className={styles.contentTitle}>
+          Use Markdown to write and format posts.
+        </div>
+        <div className={styles.editor}>
+          <MarkdownEditor onData={handleData} />
+        </div>
+        <button className={styles.publishBtn} onClick={handlePublish}>
+          Publish
+        </button>
 
-      <div style={{ paddingTop: 100 }}>
-        <h2>Preview</h2>
-        <br />
-        <MarkdownPreview value={content} />
+        <div style={{ paddingTop: 100 }}>
+          <h2>Preview</h2>
+          <br />
+          <MarkdownPreview value={content} />
+        </div>
       </div>
-    </div>
+    )
   );
 };
 
