@@ -55,10 +55,14 @@ public class AuthServiceImpl implements AuthService {
     public UserResponseDTO register(UserRequestDTO userRequestDTO) {
         // check if the username or email already exists
         checkIfUsernameOrEmailExists(userRequestDTO);
-
         // map the UserRequestDTO to a User
-        var user = modelMapper.map(userRequestDTO, com.ivansan.blogfinalproject.entity.User.class);
-        user.setPassword(passwordEncoder.encode(userRequestDTO.getPassword()));
+        var user = com.ivansan.blogfinalproject.entity.User.builder()
+                .username(userRequestDTO.getUsername())
+                .password(passwordEncoder.encode(userRequestDTO.getPassword()))
+                .email(userRequestDTO.getEmail())
+                .image(userRequestDTO.getImage())
+                .build();
+
 
         var role = roleRepository.findByNameIgnoreCase("ROLE_USER").orElseThrow();
         user.setRoles(Set.of(role));
@@ -74,6 +78,7 @@ public class AuthServiceImpl implements AuthService {
                 .id(savedUser.getId())
                 .username(savedUser.getUsername())
                 .email(savedUser.getEmail())
+                .image(savedUser.getImage())
                 .build();
 
     }

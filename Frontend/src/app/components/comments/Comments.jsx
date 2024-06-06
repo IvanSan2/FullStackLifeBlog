@@ -112,7 +112,8 @@ const Comments = (props) => {
         {comments.map((comment) => (
           <Comment
             key={comment.id}
-            liked={comment.liked?true:false}
+            //TODO: add the liked prop in the Backend
+            liked={false}
             userImage={comment.user.image}
             username={comment.user.username}
             date={

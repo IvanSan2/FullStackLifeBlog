@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./loginPage.module.css";
 import googleIcon from "../../../public/google_icon.svg";
 import githubIcon from "../../../public/github_icon.png";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
@@ -52,6 +52,7 @@ const page = () => {
       <div className={styles.wrapper}>
         <h1 className={styles.title}>Login</h1>
         <div className={styles.loginFormContainer}>
+        
           <form className={styles.loginForm}>
             <input
               type="text"
@@ -111,6 +112,10 @@ const page = () => {
             />
             Log in with Github
           </div>
+
+          <p className={styles.registerLink} onClick={() => router.push("/register")}>
+            Don't have an account? Register here
+          </p>
         </div>
       </div>
     </div>

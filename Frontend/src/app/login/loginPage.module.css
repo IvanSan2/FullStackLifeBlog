@@ -95,6 +95,21 @@
   transition: background-color 0.2s ease-in-out;
 }
 
+.description {
+  display: flex;
+  justify-content: center;
+  color: var(--softTextColor);
+  font-size: small;
+}
+
+.registerLink{
+  display: flex;
+  justify-content: center;
+  color: var(--softTextColor);
+  cursor: pointer;
+  padding-top: 15px;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     height: calc(100vh - 550px);

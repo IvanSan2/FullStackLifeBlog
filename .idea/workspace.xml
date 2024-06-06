@@ -5,22 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/CommentResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/dto/CommentResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/card/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/card/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/cardList/CardList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/cardList/CardList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/cardList/cardList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/cardList/cardList.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/comment/Comment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/comment/Comment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/service/AuthServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/comments/Comments.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/comments/Comments.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/FeaturedSlide.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/FeaturedSlide.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/featuredSlide.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlide/featuredSlide.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlider/FeaturedSlider.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlider/FeaturedSlider.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlider/featuredSlider.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/featuredSlider/featuredSlider.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/icons/SendIcon.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/icons/SendIcon.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/navbar/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/navbar/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/posts/[slug]/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/posts/[slug]/page.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/src/app/write/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/write/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/markdown/MarkdownPreview.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/markdown/MarkdownPreview.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/components/markdown/markdownPreview.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/components/markdown/markdownPreview.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/login/loginPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/login/loginPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/login/page.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/login/page.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/posts/[slug]/singlePage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/posts/[slug]/singlePage.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,8 +161,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
-        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -218,6 +212,8 @@
       <workItem from="1716789478550" duration="948000" />
       <workItem from="1716880840989" duration="600000" />
       <workItem from="1717430113186" duration="4297000" />
+      <workItem from="1717661361907" duration="57000" />
+      <workItem from="1717661488262" duration="7701000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
