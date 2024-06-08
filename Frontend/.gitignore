@@ -27,6 +27,8 @@ yarn-error.log*
 # local env files
 .env*.local
 .env
+*.env
+*.env.json
 # vercel
 .vercel
 
@@ -36,7 +38,7 @@ next-env.d.ts
 
 # properties
 .vscode
-*.properties
+Backend/src/main/resources/application.properties
 
 # pem
 *.pem

@@ -36,5 +36,21 @@ build/
 /r
 /src/main/resources/certs/
 
-### application properties ###
-/src/main/resources/application.properties
+# local env files
+.env*.local
+.env
+*.env
+*.env.json
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# properties
+.vscode
+application.properties
+
+# pem
+*.pem
