@@ -43,7 +43,7 @@ export default function FeaturedSlider({ slides }) {
   useEffect(() => {
     const interval = setInterval(autoScroll, 5000);
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [currentIndex, autoScroll]);
 
   //TODO: add swipe effect to the slider
 

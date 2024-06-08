@@ -8,7 +8,7 @@ import { ThemeContext } from "../context/ThemeContext";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../context/AuthContext";
 
-const page = () => {
+const Page = () => {
   const { theme } = useContext(ThemeContext);
   const router = useRouter();
   const [email, setEmail] = useState("");
@@ -16,11 +16,11 @@ const page = () => {
   const { login } = useAuth();
 
   const handleGoogleLogin = () => {
-    window.location.href = "/api/v1/auth/oauth2/authorize/google";
+    window.location.href = "https://fullstacklifeblogbackend.onrender.com/api/v1/auth/oauth2/authorize/google";
   };
 
   const handleGithubLogin = () => {
-    window.location.href = "/api/v1/auth/oauth2/authorize/github";
+    window.location.href = "https://fullstacklifeblogbackend.onrender.com/api/v1/auth/oauth2/authorize/github";
   };
 
   const formLogin = async (e) => {
@@ -122,4 +122,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

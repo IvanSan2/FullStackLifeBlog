@@ -1,3 +1,12 @@
+GET http://localhost:8080/api/v1/posts
+Authorization: bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJBZG1pbiIsImV4cCI6MTcxMDg4MTk4MiwiaWF0IjoxNzEwODM4NzgyLCJzY29wZSI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIn0.Xu0rnIP9uTEUeA84I9bGSxDTxr3ZHlIYdUE1Njk3uKNyFB3II5Yr_0iKsL0ZXnY3ECzvOWW8VeT2gTzcFRxWWHlaPI8aORjyM-6RhRnXcEvXf_7r54FPFuLlUClFHvuFTDJTDNrt4ISSvu2OOLSQK3cvPDk0QcFS2kF8QLBH8EEdB0bL7ao1xzkJ52jtqyQai1WCdSKeDlHHdQF9yasV3PTfE2P9Zg_7rn_1HpMVPlNO_BKfRkbcPl9e6pFeOamWHQwkceXbLb12BQ647IYf2BbS1JvcrieGmUFcC_Ma6dJj-nP7tB9AS2_cVXOwITXQRQ0m6dRINqoc5SBROa5N2w
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2024.1.2
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+content-length: 0
+
+###
+
 POST http://localhost:8080/api/v1/auth/login
 Content-Type: application/json
 Content-Length: 52

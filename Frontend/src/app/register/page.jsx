@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import styles from "./registerPage.module.css";
 import imageCompression from "browser-image-compression";
 import axios from "axios";
+import Image from 'next/image'
 
 const RegisterPage = () => {
     const router = useRouter();
@@ -114,10 +115,12 @@ const RegisterPage = () => {
             className={styles.imageUploadBtn}
           />
           {image && (
-            <img
+            <Image
               id="output"
               src={image}
-              style={{ borderRadius: "50%", width: "100px", height: "100px", objectFit: "cover"}}
+              width={100}
+              height={100}
+              style={{ borderRadius: "50%", objectFit: "cover"}}
               alt="cover image"
             />
           )}

@@ -49,9 +49,9 @@ const CardList = () => {
         {loading ? (
           <h1>Loading...</h1>
         ) : (
-          posts.map((post) => (
+          posts.map((post, i) => (
             <div className={styles.post}>
-              <Card key={post.id} post={post} />
+              <Card key={i} post={post} />
             </div>
           ))
         )}

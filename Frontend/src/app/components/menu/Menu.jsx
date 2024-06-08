@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <div className={styles.container}>
       <div className={styles.titleContainer}>
-        <h3 className={styles.subtitle}>What's hot</h3>
+        <h3 className={styles.subtitle}>What&apos;s hot</h3>
         <h1 className={styles.title}>Most Popular</h1>
       </div>
       <div className={styles.items}>

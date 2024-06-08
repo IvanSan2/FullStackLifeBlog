@@ -57,7 +57,7 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of("http://127.0.0.1:8080", "http://localhost:8080", "http://localhost:3000", "http://127.0.0.1:3000"));
+        configuration.setAllowedOrigins(List.of("http://127.0.0.1:8080", "http://localhost:8080", "http://localhost:3000", "http://127.0.0.1:3000","https://fullstacklifeblogbackend.onrender.com","https://fullstack-life-blog-frontend-latest.onrender.com"));
         configuration.setAllowCredentials(true);
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowedMethods(Arrays.asList("DELETE", "GET", "POST", "PATCH", "PUT"));

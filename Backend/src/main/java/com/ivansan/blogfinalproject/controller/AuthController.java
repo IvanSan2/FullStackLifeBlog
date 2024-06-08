@@ -58,11 +58,11 @@ public class AuthController {
         OAuth2AuthenticationToken authentication = (OAuth2AuthenticationToken) session.getAttribute("oauth2Authentication");
         if (authentication != null) {
             System.out.println(STR."From Controller: \{authentication.toString()}");
-            // Удаление OAuth2AuthenticationToken из сессии после использования
+            // remove the authentication from the session
             session.removeAttribute("oauth2Authentication");
             return ResponseEntity.ok(oAuth2Service.registerAndLogin(authentication));
         } else {
-            // Обработка случая, когда аутентификация не найдена в сессии
+            // if the authentication is null, return unauthorized status
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
         }
     }

@@ -13,10 +13,13 @@ const Comments = (props) => {
   const [comments, setComments] = useState(props.comments);
   const [comment, setComment] = useState("");
   const [placeholder, setPlaceholder] = useState("Write your comment...");
-  const [postId, setPostId] = useState(props.postId);
 
-  console.log(comments);
-  console.log(comment);
+
+  useEffect(() => {
+    // reverse the comments array to show the latest comments first
+    setComments(comments.reverse());
+  }, [comments]);
+
 
 
   // A function to handle the focus event
@@ -38,7 +41,7 @@ const Comments = (props) => {
       // Send the comment to the server
       try {
         const response = await axios.post(
-          `/api/v1/posts/${postId}/comments`,
+          `/api/v1/posts/${props.postId}/comments`,
           {
            comment
           },
@@ -53,7 +56,7 @@ const Comments = (props) => {
         const newComment = await response.data;
         console.log(newComment);
         // Add the new comment to the list of comments
-        setComments([...comments, newComment.text]);
+        setComments([ newComment, ...comments]);
       } catch (error) {
         console.error(error);
       }
@@ -124,7 +127,7 @@ const Comments = (props) => {
                 : new Date(comment.createdAt).getTime() >
                   new Date().getTime() - 3600000 // 1 hour in ms
                 ? "Just now"
-                : // show how much time ago the comment was created
+                : // show how much time ago the post was created
                   `${
                     Math.floor(
                       (new Date().getTime() -
@@ -134,7 +137,7 @@ const Comments = (props) => {
                   }h and ${Math.floor(
                     (new Date().getTime() -
                       new Date(comment.createdAt).getTime()) /
-                      600000
+                      6000000
                   )}m
                    ago`
             }
