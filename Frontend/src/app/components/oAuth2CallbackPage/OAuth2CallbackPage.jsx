@@ -19,7 +19,7 @@ const OAuth2CallbackPage = () => {
 
     const getJwtToken = async () => {
       try {
-        const response = await axios.get("https://fullstacklifeblogbackend.onrender.com/api/v1/auth/oauth2/success", {
+        const response = await axios.get("api/v1/auth/oauth2/success", {
           headers: {
             "Content-Type": "application/json",
           },

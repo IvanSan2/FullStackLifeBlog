@@ -16,11 +16,11 @@ const Page = () => {
   const { login } = useAuth();
 
   const handleGoogleLogin = () => {
-    window.location.href = "https://fullstacklifeblogbackend.onrender.com/api/v1/auth/oauth2/authorize/google";
+    window.location.href = "api/v1/auth/oauth2/authorize/google";
   };
 
   const handleGithubLogin = () => {
-    window.location.href = "https://fullstacklifeblogbackend.onrender.com/api/v1/auth/oauth2/authorize/github";
+    window.location.href = "api/v1/auth/oauth2/authorize/github";
   };
 
   const formLogin = async (e) => {
