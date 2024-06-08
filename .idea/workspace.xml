@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment=".">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/OAuth2LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/OAuth2LoginSuccessHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +215,7 @@
       <workItem from="1717751583420" duration="61000" />
       <workItem from="1717758688627" duration="609000" />
       <workItem from="1717759319360" duration="140000" />
-      <workItem from="1717848326061" duration="1038000" />
+      <workItem from="1717848326061" duration="1780000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />
