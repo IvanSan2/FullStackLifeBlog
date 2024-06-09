@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment="." />
+    <list default="true" id="d59b57f4-d2e1-4011-a694-1c5bc080c9f4" name="Changes" comment=".">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/OAuth2LoginSuccessHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Backend/src/main/java/com/ivansan/blogfinalproject/config/OAuth2LoginSuccessHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/src/app/login/loginPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/src/app/login/loginPage.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,6 +220,8 @@
       <workItem from="1717758688627" duration="609000" />
       <workItem from="1717759319360" duration="140000" />
       <workItem from="1717848326061" duration="1910000" />
+      <workItem from="1717949766230" duration="6858000" />
+      <workItem from="1717961466008" duration="1392000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <option name="closed" value="true" />

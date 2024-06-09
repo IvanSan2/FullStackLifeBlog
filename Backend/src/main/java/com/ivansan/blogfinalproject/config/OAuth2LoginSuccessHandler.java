@@ -30,7 +30,7 @@ public class OAuth2LoginSuccessHandler extends SavedRequestAwareAuthenticationSu
             request.getSession().setAttribute("oauth2Authentication", authentication);
 
             // redirect to the success page with the token in the URL
-            String redirectUri = "https://localhost:3000/oauth2callback";
+            String redirectUri = "http://localhost:3000/oauth2callback";
             response.sendRedirect(redirectUri);
         }
         super.onAuthenticationSuccess(request, response, authentication);

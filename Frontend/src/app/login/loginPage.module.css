@@ -108,6 +108,13 @@
   color: var(--softTextColor);
   cursor: pointer;
   padding-top: 15px;
+  border-bottom: 1px solid var(--softTextColor);
+}
+
+.registerLink:hover {
+  color: var(--textColor);
+  border-bottom: 1px solid var(--textColor);
+  transition: color 0.2s ease-in-out;
 }
 
 @media screen and (max-width: 768px) {
